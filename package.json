@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy-gh": "GH=1 yarn docs:build && bash scripts/deploy-gh.sh"
+    "deploy-gh": "bash scripts/deploy-gh.sh"
   },
   "author": "",
   "license": "ISC",
