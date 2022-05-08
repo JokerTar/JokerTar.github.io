@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # git pll 拉取最新代码
       - name: install node.js
-      - uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v2.5.1
         with:
           node-version: '14.x'
       - name: install deps
