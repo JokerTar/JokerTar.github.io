@@ -28,7 +28,7 @@ jobs:
         run: |
           ssh root@8.136.209.34 "
             cd /opt/blogs;
-            # mkdir editor-server;
+            mkdir editor-server;
             git init;
             git config --global --unset http.proxy;
             git config --global --unset https.proxy;
