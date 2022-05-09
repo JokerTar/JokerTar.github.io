@@ -1,7 +1,7 @@
 module.exports = {
   title: "八爪鱼小站",
   description: "八爪鱼小站",
-  base: "/JokerTar.github.io/",
+  base: "",
   head: [
     // ['link', { rel: 'icon', href: '/favicon.ico' }] // 需要被注入到当前页面的 HTML <head> 中的标签
   ],
@@ -10,12 +10,12 @@ module.exports = {
     // logo: '/dh_logo.jpg',
     nav: [
       // 直接跳转，'/'为不添加路由，跳转至首页，以/结尾的最终对应的都是/index.html,也就是README.md文件编译后的页面
-      { text: 'Home', link: '/' },
+      { text: "Home", link: "/" },
       // { text: 'webpack', link: '/blog/webpack/' },
       // { text: 'Vue', link: '/blog/Vue/' },
       // { text: 'React', link: '/blog/React/' },
       // { text: 'JavaScript高级语法', link: '/blog/JavaScript/' },
-      // { 
+      // {
       //   text: 'Node',
       //   items: [
       //     { text: 'node基础', link: '/blog/node/01_base' },
@@ -42,6 +42,6 @@ module.exports = {
     // 禁用导航栏
     // navbar: false,
     // 设置自动生成侧边栏
-    sidebar: 'auto',
-  }
-}
+    sidebar: "auto",
+  },
+};
