@@ -1,3 +1,4 @@
+# 自动化部署到测试机
 name: deploy
 
 on:
@@ -32,3 +33,14 @@ jobs:
           port: 22
           source: "docs/.vuepress/dist"
           target: "/opt/blogs/dist"
+
+      - name: remote login
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.STAGEDEPLPASS }}
+          port: 22
+          script: |
+            cd /opt/test
+            mkdir a.txt
