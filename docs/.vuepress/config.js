@@ -25,7 +25,13 @@ module.exports = {
         ],
       },
       { text: "Python", link: "/blog/Python/" },
-      { text: "前端架构", link: "/blog/前端架构/" },
+      {
+        text: "前端架构",
+        items: [
+          { text: "Github Actions", link: "/blog/前端架构/GithubActions" },
+          { text: "Docker", link: "/blog/前端架构/Docker" },
+        ],
+      },
       {
         text: "web",
         items: [
