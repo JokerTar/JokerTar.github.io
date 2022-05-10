@@ -1,5 +1,5 @@
 # 自动化部署到测试机
-name: dev Docker
+name: deploy
 
 on:
   push:
