@@ -5,8 +5,8 @@ on:
   push:
     branches: [master]
     paths:
-      - "docs/**"
-      - ".github/workflows/**"
+      - 'docs/**'
+      - '.github/workflows/**'
   pull_request:
     branches: [master]
 
@@ -19,7 +19,7 @@ jobs:
       - name: install node.js
         uses: actions/setup-node@v2.5.1
         with:
-          node-version: "14.x"
+          node-version: '14.x'
       - name: install deps
         run: npm install
       - name: build app
@@ -31,16 +31,16 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASS }}
           port: 22
-          source: "docs/.vuepress/dist"
-          target: "/opt/blogs/dist"
+          source: 'docs/.vuepress/dist'
+          target: '/opt/blogs/dist'
 
-      - name: remote login
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          password: ${{ secrets.REMOTE_PASS }}
-          port: 22
-          script: |
-            cd /opt/test
-            mkdir a.txt
+      # - name: remote login
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.REMOTE_HOST }}
+      #     username: ${{ secrets.REMOTE_USER }}
+      #     password: ${{ secrets.REMOTE_PASS }}
+      #     port: 22
+      #     script: |
+      #       cd /opt/test
+      #       mkdir a.txt

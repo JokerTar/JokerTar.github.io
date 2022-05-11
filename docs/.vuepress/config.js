@@ -4,6 +4,8 @@ module.exports = {
   base: "",
   head: [
     // ['link', { rel: 'icon', href: '/favicon.ico' }] // 需要被注入到当前页面的 HTML <head> 中的标签
+    // <meta name="referrer" content="never"></meta>
+    ['meta', {name: 'referrer', content: 'never'}]
   ],
   // host port在本地运行就不配置了
   themeConfig: {
