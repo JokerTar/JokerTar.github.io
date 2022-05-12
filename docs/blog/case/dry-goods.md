@@ -1,16 +1,3 @@
----
-title: 一些前端开发的干货
-date: 2021-02-28 02:29:20
-permalink: /frontend/advance/caselib/8396c1c08f1b6/
-author:
-  name: 黑色技术
-  link: https://gitee.com/yyman001
-categories:
-  - 资源工具
-tags:
-  -
----
-
 - [库?](https://github.com/dypsilon/frontend-dev-bookmarks)
 - [目前最全的前端开发面试题及答案](https://github.com/HerbertKarajan/Fe-Interview-questions)
 
@@ -120,7 +107,7 @@ API 文档
 > - [three.js 部分中文教程](https://threejsfundamentals.org/threejs/lessons/zh_cn/)
 > - [Nest.js 中文教程](https://docs.nestjs.cn/6/introduction)
 
-> 移动端资料
+ 移动端资料
 
 - [H5 案例 - 不定期收集市面上优秀的 H5 作品。](https://github.com/o2team/cases)
 - [移动 H5 前端性能优化指南](https://isux.tencent.com/h5-performance.html)

@@ -207,7 +207,7 @@ Node 的安装方式有很多：
 
 安装 n：直接使用 npm 安装即可
 
-```
+```js
 # 安装工具n
 npm install -g n
 # 查看安装的版本
@@ -219,7 +219,7 @@ n --version
 - 前面添加的 sudo 是权限问题；
 - 可以两个版本都安装，之后我们可以通过 n 快速在两个版本间切换；
 
-```
+```js
 # 安装最新的lts版本
 n lts
 
@@ -233,7 +233,7 @@ n latest
 
 - 可以上下选择想使用的版本
 
-```
+```js
 # 查看所有的版本
 n
 ```
@@ -276,7 +276,7 @@ n
 
 如果我们编写一个 js 文件，里面存放 JavaScript 代码，如何来执行它呢？
 
-```
+```js
 // 1.直接打印一段文字
 console.log("我是一段JavaScript代码");
 
@@ -309,18 +309,17 @@ setTimeout(() => {
 
 index.html 文件：
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-
-  <script src="./index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./index.js"></script>
+  </body>
 </html>
 ```
 
@@ -333,7 +332,7 @@ index.html 文件：
 - 首先电脑上需要安装 Node.js 环境，安装过程中会自动配置环境变量；
 - 可以通过终端命令`node js文件`的方式来载入和执行对应的 js 文件；
 
-```
+```js
 node index.js
 ```
 
@@ -362,13 +361,13 @@ Node 也给我们提供了一个 REPL 环境，我们可以在其中演练简单
 
 正常情况下执行一个 node 程序，直接跟上我们对应的文件即可：
 
-```
+```js
 node index.js
 ```
 
 但是，在某些情况下执行 node 程序的过程中，我们可能希望给 node 传递一些参数：
 
-```
+```js
 node index.js env=development coderwhy
 ```
 
@@ -401,10 +400,10 @@ node index.js env=development coderwhy
 
 我们可以在代码中，将这些参数信息遍历出来，使用：
 
-```
+```js
 // 获取参数
 console.log(process.argv);
-process.argv.forEach(item => {
+process.argv.forEach((item) => {
   console.log(item);
 });
 
@@ -421,7 +420,7 @@ process.argv.forEach(item => {
 
 最常用的输入内容的方式：console.log
 
-```
+```js
 console.log("hello coderwhy");
 ```
 
@@ -429,15 +428,15 @@ console.log("hello coderwhy");
 
 清空控制台：console.clear
 
-```
-console.clear
+```js
+console.clear;
 ```
 
 **console.trace**
 
 打印函数的调用栈：console.trace
 
-```
+```js
 function test() {
   demo();
 }
@@ -479,7 +478,7 @@ process 提供了 Node 进程中相关的信息：
 - 比如 Node 的运行环境、参数信息等；
 - 后面在项目中，我也会讲解，如何将一些环境变量读取到 `process` 的 `env` 中；
 
-```
+```js
 console.log(process);
 ```
 
@@ -510,13 +509,13 @@ console.log(process);
 
 - 暂时不用关心执行顺序问题，在后续事件循环中我会讲到；
 
-```
+```js
 setTimeout(() => {
   console.log("setTimtout");
 }, 1000);
 
 setInterval(() => {
-  console.log('setInterval');
+  console.log("setInterval");
 }, 1000);
 
 setImmediate(() => {
@@ -538,7 +537,7 @@ process.nextTick(() => {
 
 global 是一个全局对象，事实上前端我们提到的 process、console、setTimeout 等都有被放到 global 中：
 
-```
+```js
 console.log(process);
 console.log(global.process);
 ```
@@ -559,15 +558,15 @@ global 中还有哪些属性呢？
 
 但是在浏览器中执行的 JavaScript 代码，如果我们在顶级范围内通过 var 定义的一个属性，默认会被添加到 window 对象上：
 
-```
-var name = 'coderwhy';
+```js
+var name = "coderwhy";
 console.log(window.name); // coderwhy
 ```
 
 但是在 node 中，我们通过 var 定义一个变量，它只是在当前模块中有一个变量，不会放到全局中：
 
-```
-var name = 'coderwhy';
+```js
+var name = "coderwhy";
 console.log(global.name); // undefined
 ```
 
@@ -584,7 +583,7 @@ console.log(global.name); // undefined
 
 - 注意：不包括后面的文件名
 
-```
+```js
 console.log(__dirname);
 
 // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/03_常见的全局变量
@@ -596,7 +595,7 @@ console.log(__dirname);
 
 - 注意：包括后面的文件名称
 
-```
+```js
 console.log(__filename);
 // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/03_常见的全局变量/global对象.js
 ```
@@ -633,13 +632,13 @@ console.log(__filename);
 - 这个时候我们只需要讲 JavaScript 代码写到 script 标签中即可；
 - 并没有必要放到多个文件中来编写；
 
-```
+```html
 <button id="btn">按钮</button>
 
 <script>
-  document.getElementById("btn").onclick = function() {
+  document.getElementById("btn").onclick = function () {
     console.log("按钮被点击了");
-  }
+  };
 </script>
 ```
 
@@ -666,17 +665,17 @@ console.log(__filename);
 
 小明开发了 aaa.js 文件，代码如下（当然真实代码会复杂的多）：
 
-```
+```js
 var flag = true;
 
 if (flag) {
-  console.log("aaa的flag为true")
+  console.log("aaa的flag为true");
 }
 ```
 
 小丽开发了 bbb.js 文件，代码如下：
 
-```
+```js
 var flag = false;
 
 if (!flag) {
@@ -692,7 +691,7 @@ if (!flag) {
 
 但是，小明又开发了 ccc.js 文件：
 
-```
+```js
 if (flag) {
   console.log("使用了aaa的flag");
 }
@@ -705,7 +704,7 @@ if (flag) {
 
 备注：引用路径如下：
 
-```
+```html
 <script src="./aaa.js"></script>
 <script src="./bbb.js"></script>
 <script src="./ccc.js"></script>
@@ -719,23 +718,23 @@ if (flag) {
 
 aaa.js
 
-```
+```js
 const moduleA = (function () {
   var flag = true;
 
   if (flag) {
-    console.log("aaa的flag为true")
+    console.log("aaa的flag为true");
   }
 
   return {
-    flag: flag
-  }
+    flag: flag,
+  };
 })();
 ```
 
 bbb.js
 
-```
+```js
 const moduleB = (function () {
   var flag = false;
 
@@ -747,8 +746,8 @@ const moduleB = (function () {
 
 ccc.js
 
-```
-const moduleC = (function() {
+```js
+const moduleC = (function () {
   const flag = moduleA.flag;
   if (flag) {
     console.log("使用了aaa的flag");
@@ -798,8 +797,8 @@ JavaScript 社区为了解决上面的问题，涌现出一系列好用的规范
 
 bar.js
 
-```
-const name = 'coderwhy';
+```js
+const name = "coderwhy";
 const age = 18;
 
 function sayHello(name) {
@@ -809,11 +808,11 @@ function sayHello(name) {
 
 main.js
 
-```
+```js
 console.log(name);
 console.log(age);
 
-sayHello('kobe');
+sayHello("kobe");
 ```
 
 上面的代码会报错：
@@ -831,7 +830,7 @@ sayHello('kobe');
 
 bar.js 中导出内容：
 
-```
+```js
 exports.name = name;
 exports.age = age;
 exports.sayHello = sayHello;
@@ -839,22 +838,22 @@ exports.sayHello = sayHello;
 
 main.js 中导入内容：
 
-```
-const bar = require('./bar');
+```js
+const bar = require("./bar");
 ```
 
 上面这行代码意味着什么呢？
 
 - 意味着 main 中的 bar 变量等于 exports 对象；
 
-```
-main中的bar = bar中的exports
+```js
+main中的bar = bar中的exports;
 ```
 
 所以，我可以编写下面的代码：
 
-```
-const bar = require('./bar');
+```js
+const bar = require("./bar");
 
 const name = bar.name;
 const age = bar.age;
@@ -863,7 +862,7 @@ const sayHello = bar.sayHello;
 console.log(name);
 console.log(age);
 
-sayHello('kobe');
+sayHello("kobe");
 ```
 
 ![图片](https://beelz.oss-cn-beijing.aliyuncs.com/blog/imgs/c7.png)模块之间的引用关系
@@ -955,8 +954,8 @@ sayHello('kobe');
 
 aaa.js
 
-```
-const name = 'coderwhy';
+```js
+const name = "coderwhy";
 
 console.log("Hello aaa");
 
@@ -967,8 +966,8 @@ setTimeout(() => {
 
 main.js
 
-```
-const aaa = require('./aaa');
+```js
+const aaa = require("./aaa");
 ```
 
 aaa.js 中的代码在引入时会被运行一次
@@ -977,27 +976,27 @@ aaa.js 中的代码在引入时会被运行一次
 
 main.js
 
-```
-const aaa = require('./aaa');
-const bbb = require('./bbb');
+```js
+const aaa = require("./aaa");
+const bbb = require("./bbb");
 ```
 
 aaa.js
 
-```
+```js
 const ccc = require("./ccc");
 ```
 
 bbb.js
 
-```
+```js
 const ccc = require("./ccc");
 ```
 
 ccc.js
 
-```
-console.log('ccc被加载');
+```js
+console.log("ccc被加载");
 ```
 
 ccc 中的代码只会运行一次。
@@ -1078,13 +1077,13 @@ AMD 主要是应用于浏览器的一种模块化规范：
 
 - data-main 属性的作用是在加载完 src 的文件后会加载执行该文件
 
-```
+```js
 <script src="./lib/require.js" data-main="./index.js"></script>
 ```
 
 第三步：编写如下目录和代码
 
-```
+```js
 ├── index.html
 ├── index.js
 ├── lib
@@ -1096,20 +1095,18 @@ AMD 主要是应用于浏览器的一种模块化规范：
 
 index.js
 
-```
-(function() {
+```js
+(function () {
   require.config({
-    baseUrl: '',
+    baseUrl: "",
     paths: {
-      foo: './modules/foo',
-      bar: './modules/bar'
-    }
-  })
+      foo: "./modules/foo",
+      bar: "./modules/bar",
+    },
+  });
 
   // 开始加载执行foo模块的代码
-  require(['foo'], function(foo) {
-
-  })
+  require(["foo"], function (foo) {});
 })();
 ```
 
@@ -1117,30 +1114,30 @@ modules/bar.js
 
 - 如果一个模块不依赖其他，那么直接使用 define(function)即可
 
-```
-define(function() {
+```js
+define(function () {
   const name = "coderwhy";
   const age = 18;
-  const sayHello = function(name) {
+  const sayHello = function (name) {
     console.log("Hello " + name);
-  }
+  };
 
   return {
     name,
     age,
-    sayHello
-  }
-})
+    sayHello,
+  };
+});
 ```
 
 modules/foo.js
 
-```
-define(['bar'], function(bar) {
+```js
+define(["bar"], function (bar) {
   console.log(bar.name);
   console.log(bar.age);
-  bar.sayHello('kobe');
-})
+  bar.sayHello("kobe");
+});
 ```
 
 #### 4.4.3. CMD 规范
@@ -1166,7 +1163,7 @@ CMD 也有自己比较优秀的实现方案：
 
 - `seajs`是指定主入口文件的
 
-```
+```js
 <script src="./lib/sea.js"></script>
 <script>
   seajs.use('./index.js');
@@ -1175,7 +1172,7 @@ CMD 也有自己比较优秀的实现方案：
 
 第三步：编写如下目录和代码
 
-```
+```js
 ├── index.html
 ├── index.js
 ├── lib
@@ -1187,40 +1184,40 @@ CMD 也有自己比较优秀的实现方案：
 
 index.js
 
-```
-define(function(require, exports, module) {
-  const foo = require('./modules/foo');
-})
+```js
+define(function (require, exports, module) {
+  const foo = require("./modules/foo");
+});
 ```
 
 bar.js
 
-```
-define(function(require, exports, module) {
-  const name = 'lilei';
+```js
+define(function (require, exports, module) {
+  const name = "lilei";
   const age = 20;
-  const sayHello = function(name) {
+  const sayHello = function (name) {
     console.log("你好 " + name);
-  }
+  };
 
   module.exports = {
     name,
     age,
-    sayHello
-  }
-})
+    sayHello,
+  };
+});
 ```
 
 foo.js
 
-```
-define(function(require, exports, module) {
-  const bar = require('./bar');
+```js
+define(function (require, exports, module) {
+  const bar = require("./bar");
 
   console.log(bar.name);
   console.log(bar.age);
   bar.sayHello("韩梅梅");
-})
+});
 ```
 
 ### 4.5. ES Module
@@ -1252,7 +1249,7 @@ ES Module 模块采用 export 和 import 关键字来实现模块化：
 
 代码结构如下：
 
-```
+```js
 ├── index.html
 ├── main.js
 └── modules
@@ -1261,7 +1258,7 @@ ES Module 模块采用 export 和 import 关键字来实现模块化：
 
 index.html 中引入两个 js 文件作为模块：
 
-```
+```html
 <script src="./modules/foo.js" type="module"></script>
 <script src="main.js" type="module"></script>
 ```
@@ -1288,8 +1285,8 @@ export 关键字将一个模块中的变量、函数、类等导出；
 
 foo.js 文件中默认代码如下：
 
-```
-const name = 'coderwhy';
+```js
+const name = "coderwhy";
 const age = 18;
 let message = "my name is why";
 
@@ -1302,8 +1299,8 @@ function sayHello(name) {
 
 方式一：在语句声明的前面直接加上 export 关键字
 
-```
-export const name = 'coderwhy';
+```js
+export const name = "coderwhy";
 export const age = 18;
 export let message = "my name is why";
 
@@ -1317,8 +1314,8 @@ export function sayHello(name) {
 - 注意：这里的 `{}`里面不是 ES6 的对象字面量的增强写法，`{}`也不是表示一个对象的；
 - 所以：`export {name: name}`，是错误的写法；
 
-```
-const name = 'coderwhy';
+```js
+const name = "coderwhy";
 const age = 18;
 let message = "my name is why";
 
@@ -1326,23 +1323,18 @@ function sayHello(name) {
   console.log("Hello " + name);
 }
 
-export {
-  name,
-  age,
-  message,
-  sayHello
-}
+export { name, age, message, sayHello };
 ```
 
 方式三：导出时给`标识符`起一个别名
 
-```
+```js
 export {
   name as fName,
   age as fAge,
   message as fMessage,
-  sayHello as fSayHello
-}
+  sayHello as fSayHello,
+};
 ```
 
 #### 4.5.4. import 关键字
@@ -1355,10 +1347,10 @@ import 关键字负责从另外一个模块中导入内容
 
 - 注意：这里的`{}`也不是一个对象，里面只是存放导入的标识符列表内容；
 
-```
-import { name, age, message, sayHello } from './modules/foo.js';
+```js
+import { name, age, message, sayHello } from "./modules/foo.js";
 
-console.log(name)
+console.log(name);
 console.log(message);
 console.log(age);
 sayHello("Kobe");
@@ -1366,14 +1358,19 @@ sayHello("Kobe");
 
 方式二：导入时给标识符起别名
 
-```
-import { name as wName, age as wAge, message as wMessage, sayHello as wSayHello } from './modules/foo.js';
+```js
+import {
+  name as wName,
+  age as wAge,
+  message as wMessage,
+  sayHello as wSayHello,
+} from "./modules/foo.js";
 ```
 
 方式三：将模块功能放到一个模块功能对象（a module object）上
 
-```
-import * as foo from './modules/foo.js';
+```js
+import * as foo from "./modules/foo.js";
 
 console.log(foo.name);
 console.log(foo.message);
@@ -1387,29 +1384,29 @@ foo.sayHello("Kobe");
 
 bar.js 中导出一个 sum 函数：
 
-```
-export const sum = function(num1, num2) {
+```js
+export const sum = function (num1, num2) {
   return num1 + num2;
-}
+};
 ```
 
 foo.js 中导入，但是只是做一个中转：
 
-```
-export { sum } from './bar.js';
+```js
+export { sum } from "./bar.js";
 ```
 
 main.js 直接从 foo 中导入：
 
-```
-import { sum } from './modules/foo.js';
+```js
+import { sum } from "./modules/foo.js";
 console.log(sum(20, 30));
 ```
 
 甚至在 foo.js 中导出时，我们可以变化它的名字
 
-```
-export { sum as barSum } from './bar.js';
+```js
+export { sum as barSum } from "./bar.js";
 ```
 
 为什么要这样做呢？
@@ -1433,7 +1430,7 @@ export { sum as barSum } from './bar.js';
 
 导出格式如下：
 
-```
+```js
 export default function sub(num1, num2) {
   return num1 - num2;
 }
@@ -1441,8 +1438,8 @@ export default function sub(num1, num2) {
 
 导入格式如下：
 
-```
-import sub from './modules/foo.js';
+```js
+import sub from "./modules/foo.js";
 
 console.log(sub(20, 30));
 ```
@@ -1453,9 +1450,9 @@ console.log(sub(20, 30));
 
 通过 import 加载一个模块，是不可以在其放到逻辑代码中的，比如：
 
-```
+```js
 if (true) {
-  import sub from './modules/foo.js';
+  import sub from "./modules/foo.js";
 }
 ```
 
@@ -1465,7 +1462,7 @@ if (true) {
 - 由于这个时候 js 代码没有任何的运行，所以无法在进行类似于 if 判断中根据代码的执行情况；
 - 甚至下面的这种写法也是错误的：因为我们必须到运行时能确定 path 的值；
 
-```
+```js
 const path = './modules/foo.js';
 
 import sub from path;
@@ -1478,7 +1475,7 @@ import sub from path;
 
 aaa.js 模块：
 
-```
+```js
 export function aaa() {
   console.log("aaa被打印");
 }
@@ -1486,7 +1483,7 @@ export function aaa() {
 
 bbb.js 模块：
 
-```
+```js
 export function bbb() {
   console.log("bbb被执行");
 }
@@ -1494,16 +1491,16 @@ export function bbb() {
 
 main.js 模块：
 
-```
+```js
 let flag = true;
 if (flag) {
-  import('./modules/aaa.js').then(aaa => {
+  import("./modules/aaa.js").then((aaa) => {
     aaa.aaa();
-  })
+  });
 } else {
-  import('./modules/bbb.js').then(bbb => {
+  import("./modules/bbb.js").then((bbb) => {
     bbb.bbb();
-  })
+  });
 }
 ```
 
@@ -1516,13 +1513,13 @@ if (flag) {
 - 运行时加载意味着是 js 引擎在执行 js 代码的过程中加载 模块；
 - 同步的就意味着一个文件没有加载结束之前，后面的代码都不会执行；
 
-```
+```js
 console.log("main代码执行");
 
 const flag = true;
 if (flag) {
   // 同步加载foo文件，并且执行一次内部的代码
-  const foo = require('./foo');
+  const foo = require("./foo");
   console.log("if语句继续执行");
 }
 ```
@@ -1545,7 +1542,7 @@ if (flag) {
 - - 也就是说设置了 `type=module` 的代码，相当于在 script 标签上也加上了 `async` 属性；
   - 如果我们后面有普通的 script 标签以及对应的代码，那么 ES Module 对应的 js 文件和代码不会阻塞它们的执行；
 
-```
+```js
 <script src="main.js" type="module"></script>
 <!-- 这个js文件的代码不会被阻塞执行 -->
 <script src="index.js"></script>
@@ -1563,8 +1560,8 @@ if (flag) {
 
 bar.js 文件中修改
 
-```
-let name = 'coderwhy';
+```js
+let name = "coderwhy";
 
 setTimeout(() => {
   name = "湖人总冠军";
@@ -1574,15 +1571,13 @@ setTimeout(() => {
   console.log(name);
 }, 2000);
 
-export {
-  name
-}
+export { name };
 ```
 
 main.js 文件中获取
 
-```
-import { name } from './modules/bar.js';
+```js
+import { name } from "./modules/bar.js";
 
 console.log(name);
 
@@ -1594,14 +1589,14 @@ setTimeout(() => {
 
 但是，下面的代码是不成立的：main.js 中修改
 
-```
-import { name } from './modules/bar.js';
+```js
+import { name } from "./modules/bar.js";
 
 console.log(name);
 
 // main中修改, bar中验证
 setTimeout(() => {
-  name = 'kobe';
+  name = "kobe";
 }, 1000);
 ```
 
@@ -1624,18 +1619,16 @@ setTimeout(() => {
 
 bar.mjs
 
-```
-const name = 'coderwhy';
+```js
+const name = "coderwhy";
 
-export {
-  name
-}
+export { name };
 ```
 
 main.mjs
 
-```
-import { name } from './modules/bar.mjs';
+```js
+import { name } from "./modules/bar.mjs";
 
 console.log(name);
 ```
@@ -1666,18 +1659,18 @@ console.log(name);
 
 foo.js
 
-```
-const address = 'foo的address';
+```js
+const address = "foo的address";
 
 module.exports = {
-  address
-}
+  address,
+};
 ```
 
 main.js
 
-```
-import foo from './modules/foo.js';
+```js
+import foo from "./modules/foo.js";
 console.log(foo.address);
 ```
 
@@ -1707,10 +1700,10 @@ path 模块用于对路径和文件进行处理，提供了很多好用的方法
 - basename：获取文件名；
 - extname：获取文件扩展名；
 
-```
+```js
 const path = require("path");
 
-const myPath = '/Users/coderwhy/Desktop/Node/课堂/PPT/01_邂逅Node.pdf';
+const myPath = "/Users/coderwhy/Desktop/Node/课堂/PPT/01_邂逅Node.pdf";
 
 const dirname = path.dirname(myPath);
 const basename = path.basename(myPath);
@@ -1726,8 +1719,8 @@ console.log(extname); // .pdf
 - 如果我们希望将多个路径进行拼接，但是不同的操作系统可能使用的是不同的分隔符；
 - 这个时候我们可以使用`path.join`函数；
 
-```
-console.log(path.join('/user', 'why', 'abc.txt'));
+```js
+console.log(path.join("/user", "why", "abc.txt"));
 ```
 
 **将文件和某个文件夹拼接**
@@ -1738,20 +1731,20 @@ console.log(path.join('/user', 'why', 'abc.txt'));
   - 如果有表示是一个绝对路径，会返回对应的拼接路径；
   - 如果没有，那么会和当前执行文件所在的文件夹进行路径的拼接
 
-```
-path.resolve('abc.txt'); // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/06_常见的内置模块/02_文件路径/abc.txt
-path.resolve('/abc.txt'); // /abc.txt
-path.resolve('/User/why', 'abc.txt'); // /User/why/abc.txt
-path.resolve('User/why', 'abc.txt'); // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/06_常见的内置模块/02_文件路径/User/why/abc.txt
+```js
+path.resolve("abc.txt"); // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/06_常见的内置模块/02_文件路径/abc.txt
+path.resolve("/abc.txt"); // /abc.txt
+path.resolve("/User/why", "abc.txt"); // /User/why/abc.txt
+path.resolve("User/why", "abc.txt"); // /Users/coderwhy/Desktop/Node/TestCode/04_learn_node/06_常见的内置模块/02_文件路径/User/why/abc.txt
 ```
 
 resolve 其实我们在 webpack 中也会使用：
 
-```
-const CracoLessPlugin = require('craco-less');
+```js
+const CracoLessPlugin = require("craco-less");
 const path = require("path");
 
-const resolve = dir => path.resolve(__dirname, dir);
+const resolve = (dir) => path.resolve(__dirname, dir);
 
 module.exports = {
   plugins: [
@@ -1760,20 +1753,20 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { '@primary-color': '#1DA57A' },
+            modifyVars: { "@primary-color": "#1DA57A" },
             javascriptEnabled: true,
           },
         },
       },
-    }
+    },
   ],
   webpack: {
     alias: {
       "@": resolve("src"),
-      "components": resolve("src/components")
-    }
-  }
-}
+      components: resolve("src/components"),
+    },
+  },
+};
 ```
 
 ### 5.2. 内置模块 fs
@@ -1811,17 +1804,17 @@ Node 文件系统的 API 非常的多：https://nodejs.org/dist/latest-v14.x/doc
 
 方式一：同步操作文件
 
-```
+```js
 // 1.方式一: 同步读取文件
-const state = fs.statSync('../foo.txt');
+const state = fs.statSync("../foo.txt");
 console.log(state);
 
-console.log('后续代码执行');
+console.log("后续代码执行");
 ```
 
 方式二：异步回调函数操作文件
 
-```
+```js
 // 2.方式二: 异步读取
 fs.stat("../foo.txt", (err, state) => {
   if (err) {
@@ -1829,19 +1822,22 @@ fs.stat("../foo.txt", (err, state) => {
     return;
   }
   console.log(state);
-})
+});
 console.log("后续代码执行");
 ```
 
 方式三：异步 Promise 操作文件
 
-```
+```js
 // 3.方式三: Promise方式
-fs.promises.stat("../foo.txt").then(state => {
-  console.log(state);
-}).catch(err => {
-  console.log(err);
-})
+fs.promises
+  .stat("../foo.txt")
+  .then((state) => {
+    console.log(state);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 console.log("后续代码执行");
 ```
 
@@ -1860,15 +1856,15 @@ console.log("后续代码执行");
 
 `fs.open()` 方法用于分配新的文件描述符。一旦被分配，则文件描述符可用于从文件读取数据、向文件写入数据、或请求关于文件的信息。
 
-```
+```js
 // 获取文件描述符
-fs.open("../foo.txt", 'r', (err, fd) => {
+fs.open("../foo.txt", "r", (err, fd) => {
   console.log(fd);
 
   fs.fstat(fd, (err, state) => {
     console.log(state);
-  })
-})
+  });
+});
 ```
 
 #### 5.2.3.文件的读写
@@ -1880,10 +1876,10 @@ fs.open("../foo.txt", 'r', (err, fd) => {
 
 文件写入：
 
-```
-fs.writeFile('../foo.txt', content, {}, err => {
+```js
+fs.writeFile("../foo.txt", content, {}, (err) => {
   console.log(err);
-})
+});
 ```
 
 在上面的代码中，你会发现有一个大括号没有填写任何的内容，这个是写入时填写的 option 参数：
@@ -1911,20 +1907,20 @@ fs.writeFile('../foo.txt', content, {}, err => {
 
 - 如果不填写 encoding，返回的结果是 Buffer；
 
-```
-fs.readFile('../foo.txt', {encoding: 'utf-8'}, (err, data) => {
+```js
+fs.readFile("../foo.txt", { encoding: "utf-8" }, (err, data) => {
   console.log(data);
-})
+});
 ```
 
 文件读取：
 
-```
-const fs = require('fs');
+```js
+const fs = require("fs");
 
-fs.readFile('../foo.txt', {encoding: 'utf-8'}, (err, data) => {
+fs.readFile("../foo.txt", { encoding: "utf-8" }, (err, data) => {
   console.log(data);
-})
+});
 ```
 
 #### 5.2.3.文件夹操作
@@ -1933,33 +1929,33 @@ fs.readFile('../foo.txt', {encoding: 'utf-8'}, (err, data) => {
 
 使用`fs.mkdir()`或`fs.mkdirSync()`创建一个新文件夹：
 
-```
-const fs = require('fs');
+```js
+const fs = require("fs");
 
-const dirname = '../why';
+const dirname = "../why";
 
 if (!fs.existsSync(dirname)) {
   fs.mkdir(dirname, (err) => {
     console.log(err);
-  })
+  });
 }
 ```
 
 **获取文件夹的内容**
 
-```
+```js
 // 读取文件夹
 function readFolders(folder) {
-  fs.readdir(folder, {withFileTypes: true} ,(err, files) => {
-    files.forEach(file => {
+  fs.readdir(folder, { withFileTypes: true }, (err, files) => {
+    files.forEach((file) => {
       if (file.isDirectory()) {
         const newFolder = path.resolve(dirname, file.name);
         readFolders(newFolder);
       } else {
         console.log(file.name);
       }
-    })
-  })
+    });
+  });
 }
 
 readFolders(dirname);
@@ -1967,10 +1963,10 @@ readFolders(dirname);
 
 **文件重命名**
 
-```
-fs.rename('../why', '../coder', err => {
+```js
+fs.rename("../why", "../coder", (err) => {
   console.log(err);
-})
+});
 ```
 
 ### 5.3. 内置模块 events
@@ -1988,8 +1984,8 @@ Node 中的核心 API 都是基于异步事件驱动的：
 - `emitter.off(eventName, listener)`：移除事件监听，也可以使用`removeListener`；
 - `emitter.emit(eventName[, ...args])`：发出事件，可以携带一些参数；
 
-```
-const EventEmmiter = require('events');
+```js
+const EventEmmiter = require("events");
 
 // 监听事件
 const bus = new EventEmmiter();
@@ -2016,7 +2012,7 @@ EventEmitter 的实例有一些属性，可以记录一些信息：
 - `emitter.listenerCount(事件名称)`：返回当前 `EventEmitter对象`某一个事件名称，监听器的个数；
 - `emitter.listeners(事件名称)`：返回当前 `EventEmitter对象`某个事件监听器上所有的监听器数组；
 
-```
+```js
 console.log(bus.eventNames());
 console.log(bus.getMaxListeners());
 console.log(bus.listenerCount("click"));
@@ -2027,45 +2023,45 @@ console.log(bus.listeners("click"));
 
 `emitter.once(eventName, listener)`：事件监听一次
 
-```
-const EventEmitter = require('events');
+```js
+const EventEmitter = require("events");
 
 const emitter = new EventEmitter();
 
-emitter.once('click', (args) => {
+emitter.once("click", (args) => {
   console.log("监听到事件", args);
-})
+});
 
 setTimeout(() => {
-  emitter.emit('click', 'coderwhy');
-  emitter.emit('click', 'coderwhy');
+  emitter.emit("click", "coderwhy");
+  emitter.emit("click", "coderwhy");
 }, 2000);
 ```
 
 `emitter.prependListener()`：将监听事件添加到最前面
 
-```
-emitter.on('click', (args) => {
+```js
+emitter.on("click", (args) => {
   console.log("a监听到事件", args);
-})
+});
 
 // b监听事件会被放到前面
 emitter.prependListener("click", (args) => {
   console.log("b监听到事件", args);
-})
+});
 ```
 
 `emitter.prependOnceListener()`：将监听事件添加到最前面，但是只监听一次
 
-```
+```js
 emitter.prependOnceListener("click", (args) => {
   console.log("c监听到事件", args);
-})
+});
 ```
 
 `emitter.removeAllListeners([eventName])`：移除所有的监听器
 
-```
+```js
 // 移除emitter上的所有事件监听
 emitter.removeAllListeners();
 // 移除emitter上的click事件监听
@@ -2128,7 +2124,7 @@ npm 管理的包存放在哪里呢？
 
 我们以 vue cli4 脚手架创建的项目为例：
 
-```
+```json
 {
   "name": "my-vue",
   "version": "0.1.0",
@@ -2151,17 +2147,13 @@ npm 管理的包存放在哪里呢？
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not dead"]
 }
 ```
 
 事实上 Vue ClI4 脚手架创建的项目相对进行了简化，我们来看一下 CLI2 创建的项目：
 
-```
+```json
 {
   "name": "vuerouterbasic",
   "version": "1.0.0",
@@ -2218,24 +2210,20 @@ npm 管理的包存放在哪里呢？
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }
 ```
 
 我们也可以手动创建一个 package.json 文件：
 
-```
+```js
 npm init #创建时填写信息
 npm init -y # 所有信息使用默认的
 ```
 
 `npm init -y`生成文件的效果：
 
-```
+```json
 {
   "name": "learn-npm",
   "version": "1.0.0",
@@ -2350,7 +2338,7 @@ semver 版本规范是 X.Y.Z：
 
 比如 yarn 的全局安装：
 
-```
+```js
 npm install yarn -g
 ```
 
@@ -2366,7 +2354,7 @@ npm install yarn -g
 
 局部安装分为开发时依赖和生产时依赖：
 
-```
+```js
 # 安装开发和生产依赖
 npm install axios --save
 npm install axios -S
@@ -2407,7 +2395,7 @@ npm i axios -D
 
 package-lock.json 文件：
 
-```
+```json
 {
   "name": "learn-npm",
   "version": "1.0.0",
@@ -2456,7 +2444,7 @@ package-lock.json 文件解析：
 
 卸载某个依赖包：
 
-```
+```js
 npm uninstall package
 npm uninstall package --save-dev
 npm uninstall package -D
@@ -2464,13 +2452,13 @@ npm uninstall package -D
 
 强制重新 build
 
-```
+```js
 npm rebuild
 ```
 
 清除缓存
 
-```
+```js
 npm cache clean
 ```
 
@@ -2498,13 +2486,13 @@ npm 的命令其实是非常多的：
 
 查看 npm 镜像：
 
-```
+```js
 npm config get registry # npm config get registry
 ```
 
 我们可以直接设置 npm 的镜像：
 
-```
+```js
 npm config set registry https://registry.npm.taobao.org
 ```
 
@@ -2515,7 +2503,7 @@ npm config set registry https://registry.npm.taobao.org
 
 这个时候，我们可以使用 cnpm，并且将 cnpm 设置为淘宝的镜像：
 
-```
+```js
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 cnpm config get registry # https://r.npm.taobao.org/
 ```
@@ -2549,7 +2537,7 @@ npx 的作用非常多，但是比较常见的是使用它来调用项目中的�
 
 方式二：修改 package.json 中的 scripts
 
-```
+```json
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --version"
@@ -2578,7 +2566,7 @@ nrm 是 npm 的镜像源管理工具，很多使用我们使用 npm 下载国外
 npm install -g nrm
 ```
 
-```
+```js
 nrm ls // 查看可选源
 nrm test taobao // 测试源响应时间
 nrm use taobeo // 切换源
@@ -2634,7 +2622,7 @@ JavaScript 可以直接去处理非常直观的数据：比如字符串，我们
 
 如果我们希望将一个字符串放入到 Buffer 中，是怎么样的过程呢？
 
-```
+```js
 const buffer01 = new Buffer("why");
 
 console.log(buffer01);
@@ -2648,14 +2636,14 @@ console.log(buffer01);
 
 那么我们可以通过另外一个创建方法：
 
-```
+```js
 const buffer2 = Buffer.from("why");
 console.log(buffer2);
 ```
 
 如果是中文呢？
 
-```
+```js
 const buffer3 = Buffer.from("王红元");
 console.log(buffer3);
 // <Buffer e7 8e 8b e7 ba a2 e5 85 83>
@@ -2666,11 +2654,11 @@ console.log(str);
 
 如果编码和解码不同：
 
-```
-const buffer3 = Buffer.from("王红元", 'utf16le');
+```js
+const buffer3 = Buffer.from("王红元", "utf16le");
 console.log(buffer3);
 
-const str = buffer3.toString('utf8');
+const str = buffer3.toString("utf8");
 console.log(str); // �s�~CQ
 ```
 
@@ -2686,7 +2674,7 @@ Buffer 的创建方式有很多：
 
 - 我们会发现创建了一个 8 位长度的 Buffer，里面所有的数据默认为 00；
 
-```
+```js
 const buffer01 = Buffer.alloc(8);
 
 console.log(buffer01); // <Buffer 00 00 00 00 00 00 00 00>
@@ -2694,8 +2682,8 @@ console.log(buffer01); // <Buffer 00 00 00 00 00 00 00 00>
 
 我们也可以对其进行操作：
 
-```
-buffer01[0] = 'w'.charCodeAt();
+```js
+buffer01[0] = "w".charCodeAt();
 buffer01[1] = 100;
 buffer01[2] = 0x66;
 console.log(buffer01);
@@ -2703,7 +2691,7 @@ console.log(buffer01);
 
 也可以使用相同的方式来获取：
 
-```
+```js
 console.log(buffer01[0]);
 console.log(buffer01[0].toString(16));
 ```
@@ -2712,19 +2700,19 @@ console.log(buffer01[0].toString(16));
 
 文本文件的读取：
 
-```
-const fs = require('fs');
+```js
+const fs = require("fs");
 
-fs.readFile('./test.txt', (err, data) => {
+fs.readFile("./test.txt", (err, data) => {
   console.log(data); // <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
   console.log(data.toString()); // Hello World
-})
+});
 ```
 
 图片文件的读取：
 
-```
-fs.readFile('./zznh.jpg', (err, data) => {
+```js
+fs.readFile("./zznh.jpg", (err, data) => {
   console.log(data); // <Buffer ff d8 ff e0 ... 40418 more bytes>
 });
 ```
@@ -2734,16 +2722,16 @@ fs.readFile('./zznh.jpg', (err, data) => {
 - 将读取的某一张图片，转换成一张 200x200 的图片；
 - 这里我们可以借助于 `sharp` 库来完成；
 
-```
-const sharp = require('sharp');
-const fs = require('fs');
+```js
+const sharp = require("sharp");
+const fs = require("fs");
 
-sharp('./test.png')
+sharp("./test.png")
   .resize(1000, 1000)
   .toBuffer()
-  .then(data => {
-    fs.writeFileSync('./test_copy.png', data);
-  })
+  .then((data) => {
+    fs.writeFileSync("./test_copy.png", data);
+  });
 ```
 
 ### 7.4. Buffer 的内存分配
@@ -2752,13 +2740,12 @@ sharp('./test.png')
 
 - node/lib/buffer.js：135 行
 
-```
+```js
 Buffer.poolSize = 8 * 1024;
 let poolSize, poolOffset, allocPool;
 
 const encodingsMap = ObjectCreate(null);
-for (let i = 0; i < encodings.length; ++i)
-  encodingsMap[encodings[i]] = i;
+for (let i = 0; i < encodings.length; ++i) encodingsMap[encodings[i]] = i;
 
 function createPool() {
   poolSize = Buffer.poolSize;
@@ -2774,12 +2761,11 @@ createPool();
 - 这里我们以从字符串创建为例
 - node/lib/buffer.js：290 行
 
-```
+```js
 Buffer.from = function from(value, encodingOrOffset, length) {
-  if (typeof value === 'string')
-    return fromString(value, encodingOrOffset);
+  if (typeof value === "string") return fromString(value, encodingOrOffset);
 
- // 如果是对象，另外一种处理情况
+  // 如果是对象，另外一种处理情况
   // ...
 };
 ```
@@ -2788,20 +2774,17 @@ Buffer.from = function from(value, encodingOrOffset, length) {
 
 - node/lib/buffer.js：428 行
 
-```
+```js
 function fromString(string, encoding) {
   let ops;
-  if (typeof encoding !== 'string' || encoding.length === 0) {
-    if (string.length === 0)
-      return new FastBuffer();
+  if (typeof encoding !== "string" || encoding.length === 0) {
+    if (string.length === 0) return new FastBuffer();
     ops = encodingOps.utf8;
     encoding = undefined;
   } else {
     ops = getEncodingOps(encoding);
-    if (ops === undefined)
-      throw new ERR_UNKNOWN_ENCODING(encoding);
-    if (string.length === 0)
-      return new FastBuffer();
+    if (ops === undefined) throw new ERR_UNKNOWN_ENCODING(encoding);
+    if (string.length === 0) return new FastBuffer();
   }
   return fromStringFast(string, ops);
 }
@@ -2814,15 +2797,14 @@ function fromString(string, encoding) {
 - 如果够就直接使用，但是之后要进行 `poolOffset`的偏移变化；
 - node/lib/buffer.js：428 行
 
-```
+```js
 function fromStringFast(string, ops) {
   const length = ops.byteLength(string);
 
-  if (length >= (Buffer.poolSize >>> 1))
+  if (length >= Buffer.poolSize >>> 1)
     return createFromString(string, ops.encodingVal);
 
-  if (length > (poolSize - poolOffset))
-    createPool();
+  if (length > poolSize - poolOffset) createPool();
   let b = new FastBuffer(allocPool, poolOffset, length);
   const actual = ops.write(b, string, 0, length);
   if (actual !== length) {
@@ -2883,10 +2865,10 @@ Stream 和 EventEmitter 关系
 
 之前我们读取一个文件的信息：
 
-```
-fs.readFile('./foo.txt', (err, data) => {
+```js
+fs.readFile("./foo.txt", (err, data) => {
   console.log(data);
-})
+});
 ```
 
 这种方式是一次性将一个文件中所有的内容都读取到程序（内存）中，但是这种读取方式就会出现我们之前提到的很多问题：
@@ -2899,11 +2881,11 @@ fs.readFile('./foo.txt', (err, data) => {
 - end：文件读取结束的位置；
 - highWaterMark：一次性读取字节的长度，默认是 64kb；
 
-```
+```js
 const read = fs.createReadStream("./foo.txt", {
   start: 3,
   end: 8,
-  highWaterMark: 4
+  highWaterMark: 4,
 });
 ```
 
@@ -2911,7 +2893,7 @@ const read = fs.createReadStream("./foo.txt", {
 
 - 可以通过监听 data 事件，获取读取到的数据；
 
-```
+```js
 read.on("data", (data) => {
   console.log(data);
 });
@@ -2919,23 +2901,23 @@ read.on("data", (data) => {
 
 我们也可以监听其他的事件：
 
-```
-read.on('open', (fd) => {
+```js
+read.on("open", (fd) => {
   console.log("文件被打开");
-})
+});
 
-read.on('end', () => {
+read.on("end", () => {
   console.log("文件读取结束");
-})
+});
 
-read.on('close', () => {
+read.on("close", () => {
   console.log("文件被关闭");
-})
+});
 ```
 
 甚至我们可以在某一个时刻暂停和恢复读取：
 
-```
+```js
 read.on("data", (data) => {
   console.log(data);
 
@@ -2951,10 +2933,8 @@ read.on("data", (data) => {
 
 之前我们写入一个文件的方式是这样的：
 
-```
-fs.writeFile('./foo.txt', "内容", (err) => {
-
-});
+```js
+fs.writeFile("./foo.txt", "内容", (err) => {});
 ```
 
 这种方式相当于一次性将所有的内容写入到文件中，但是这种方式也有很多问题：
@@ -2968,31 +2948,31 @@ fs.writeFile('./foo.txt', "内容", (err) => {
 
 我们进行一次简单的写入
 
-```
+```js
 const writer = fs.createWriteStream("./foo.txt", {
   flags: "a+",
-  start: 8
+  start: 8,
 });
 
-writer.write("你好啊", err => {
+writer.write("你好啊", (err) => {
   console.log("写入成功");
 });
 ```
 
 如果我们希望监听一些事件：
 
-```
+```js
 writer.on("open", () => {
   console.log("文件打开");
-})
+});
 
 writer.on("finish", () => {
   console.log("文件写入结束");
-})
+});
 
 writer.on("close", () => {
   console.log("文件关闭");
-})
+});
 ```
 
 我们会发现，我们并不能监听到 `close` 事件：
@@ -3001,23 +2981,23 @@ writer.on("close", () => {
 - 我们必须手动关闭，来告诉 Node 已经写入结束了；
 - 并且会发出一个 `finish` 事件的；
 
-```
+```js
 writer.close();
 
 writer.on("finish", () => {
   console.log("文件写入结束");
-})
+});
 
 writer.on("close", () => {
   console.log("文件关闭");
-})
+});
 ```
 
 另外一个非常常用的方法是 `end`：
 
 - `end`方法相当于做了两步操作：`write`传入的数据和调用`close`方法；
 
-```
+```js
 writer.end("Hello World");
 ```
 
@@ -3025,12 +3005,12 @@ writer.end("Hello World");
 
 正常情况下，我们可以将读取到的 `输入流`，手动的放到 `输出流`中进行写入：
 
-```
-const fs = require('fs');
-const { read } = require('fs/promises');
+```js
+const fs = require("fs");
+const { read } = require("fs/promises");
 
-const reader = fs.createReadStream('./foo.txt');
-const writer = fs.createWriteStream('./bar.txt');
+const reader = fs.createReadStream("./foo.txt");
+const writer = fs.createWriteStream("./bar.txt");
 
 reader.on("data", (data) => {
   console.log(data);
@@ -3042,12 +3022,12 @@ reader.on("data", (data) => {
 
 我们也可以通过 pipe 来完成这样的操作：
 
-```
+```js
 reader.pipe(writer);
 
-writer.on('close', () => {
+writer.on("close", () => {
   console.log("输出流关闭");
-})
+});
 ```
 
 ## 08.深入事件循环
@@ -3114,7 +3094,7 @@ writer.on('close', () => {
 - bar 获取到结果后出栈，获取到结果 result；
 - 将 log 函数压入到调用栈，log 被执行，并且出栈；
 
-```
+```js
 const name = "coderwhy";
 
 // 1.将该函数放入到调用栈中被执行
@@ -3139,7 +3119,7 @@ console.log(bar());
 - 中间我们插入了一个 setTimeout 的函数调用；
 - 这个函数被放到入调用栈中，执行会立即结束，并不会阻塞后续代码的执行；
 
-```
+```js
 const name = "coderwhy";
 
 // 1.将该函数放入到调用栈中被执行
@@ -3188,7 +3168,7 @@ console.log(result);
 
 我们来看一个面试题：执行结果如何？
 
-```
+```js
 setTimeout(function () {
   console.log("set1");
 
@@ -3218,7 +3198,7 @@ setTimeout(function () {
 console.log(2);
 
 queueMicrotask(() => {
-  console.log("queueMicrotask1")
+  console.log("queueMicrotask1");
 });
 
 new Promise(function (resolve) {
@@ -3249,33 +3229,33 @@ async、await 是 Promise 的一个语法糖：
 
 今日头条的面试题：
 
-```
-async function async1 () {
-  console.log('async1 start')
+```js
+async function async1() {
+  console.log("async1 start");
   await async2();
-  console.log('async1 end')
+  console.log("async1 end");
 }
 
-async function async2 () {
-  console.log('async2')
+async function async2() {
+  console.log("async2");
 }
 
-console.log('script start')
+console.log("script start");
 
 setTimeout(function () {
-  console.log('setTimeout')
-}, 0)
+  console.log("setTimeout");
+}, 0);
 
 async1();
 
-new Promise (function (resolve) {
-  console.log('promise1')
+new Promise(function (resolve) {
+  console.log("promise1");
   resolve();
-}).then (function () {
-  console.log('promise2')
-})
+}).then(function () {
+  console.log("promise2");
+});
 
-console.log('script end')
+console.log("script end");
 ```
 
 执行结果如下：
@@ -3412,44 +3392,44 @@ libuv 提供了一个线程池（Thread Pool）：
 
 面试题一：
 
-```
+```js
 async function async1() {
-  console.log('async1 start')
-  await async2()
-  console.log('async1 end')
+  console.log("async1 start");
+  await async2();
+  console.log("async1 end");
 }
 
 async function async2() {
-  console.log('async2')
+  console.log("async2");
 }
 
-console.log('script start')
+console.log("script start");
 
 setTimeout(function () {
-  console.log('setTimeout0')
-}, 0)
+  console.log("setTimeout0");
+}, 0);
 
 setTimeout(function () {
-  console.log('setTimeout2')
-}, 300)
+  console.log("setTimeout2");
+}, 300);
 
-setImmediate(() => console.log('setImmediate'));
+setImmediate(() => console.log("setImmediate"));
 
-process.nextTick(() => console.log('nextTick1'));
+process.nextTick(() => console.log("nextTick1"));
 
 async1();
 
-process.nextTick(() => console.log('nextTick2'));
+process.nextTick(() => console.log("nextTick2"));
 
 new Promise(function (resolve) {
-  console.log('promise1')
+  console.log("promise1");
   resolve();
-  console.log('promise2')
+  console.log("promise2");
 }).then(function () {
-  console.log('promise3')
-})
+  console.log("promise3");
+});
 
-console.log('script end')
+console.log("script end");
 ```
 
 执行结果如下：
@@ -3472,7 +3452,7 @@ setTimeout2
 
 面试题二：
 
-```
+```js
 setTimeout(() => {
   console.log("setTimeout");
 }, 0);
@@ -3500,7 +3480,7 @@ setTimeout
 - 这个函数决定了，poll 阶段要不要阻塞在这里；
 - 阻塞在这里的目的是当有异步 IO 被处理时，尽可能快的让代码被执行；
 
-```
+```js
 int uv__next_timeout(const uv_loop_t* loop) {
   const struct heap_node* heap_node;
   const uv_timer_t* handle;
@@ -3558,8 +3538,8 @@ int uv__next_timeout(const uv_loop_t* loop) {
 
 创建一个 Web 服务器的初体验：
 
-```
-const http = require('http');
+```js
+const http = require("http");
 
 const HTTP_PORT = 8000;
 
@@ -3568,8 +3548,8 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000, () => {
-  console.log(`🚀服务器在${HTTP_PORT}启动~`)
-})
+  console.log(`🚀服务器在${HTTP_PORT}启动~`);
+});
 ```
 
 ##### 1.1.2. 创建服务器
@@ -3579,7 +3559,7 @@ server.listen(8000, () => {
 - `http.createServer`会返回服务器的对象；
 - 底层其实使用直接 new Server 对象。
 
-```
+```js
 function createServer(opts, requestListener) {
   return new Server(opts, requestListener);
 }
@@ -3587,14 +3567,14 @@ function createServer(opts, requestListener) {
 
 那么，当然，我们也可以自己来创建这个对象：
 
-```
+```js
 const server2 = new http.Server((req, res) => {
   res.end("Hello Server2");
 });
 
 server2.listen(9000, () => {
   console.log("服务器启动成功~");
-})
+});
 ```
 
 上面我们已经看到，创建 Server 时会传入一个回调函数，这个回调函数在被调用时会传入两个参数：
@@ -3626,10 +3606,10 @@ server2.listen(9000, () => {
 
 - 回调函数：服务器启动成功时的回调函数；
 
-```
+```js
 server.listen(() => {
   console.log("服务器启动~🚀");
-})
+});
 ```
 
 #### 1.2. request 请求对象
@@ -3643,7 +3623,7 @@ server.listen(() => {
 
 这些信息，Node 会帮助我们封装到一个 request 的对象中，我们可以直接来处理这个 request 对象：
 
-```
+```js
 const server = http.createServer((req, res) => {
   // request对象
   console.log(req.url);
@@ -3663,14 +3643,14 @@ const server = http.createServer((req, res) => {
 
 服务器端需要根据不同的请求地址，作出不同的响应：
 
-```
+```js
 const server = http.createServer((req, res) => {
   const url = req.url;
   console.log(url);
 
-  if (url === '/login') {
+  if (url === "/login") {
     res.end("welcome Back~");
-  } else if (url === '/products') {
+  } else if (url === "/products") {
     res.end("products");
   } else {
     res.end("error message");
@@ -3687,8 +3667,8 @@ const server = http.createServer((req, res) => {
 
 - 使用内置模块 url；
 
-```
-const url = require('url');
+```js
+const url = require("url");
 
 // 解析请求
 const parseInfo = url.parse(req.url);
@@ -3697,7 +3677,7 @@ console.log(parseInfo);
 
 解析结果：
 
-```
+```js
 Url {
   protocol: null,
   slashes: null,
@@ -3721,7 +3701,7 @@ Url {
 - 方式一：截取字符串；
 - 方式二：使用 querystring 内置模块；
 
-```
+```js
 const { pathname, query } = url.parse(req.url);
 const queryObj = qs.parse(query);
 console.log(queryObj.name);
@@ -3752,15 +3732,14 @@ console.log(queryObj.password);
 - 这里我们需要判断接口是 `/users`，并且请求方式是 POST 方法去获取传入的数据；
 - 获取这种 body 携带的数据，我们需要通过监听 req 的 `data`事件来获取；
 
-```
-if (req.url.indexOf('/users') !== -1) {
-  if (req.method === 'POST') {
-
+```js
+if (req.url.indexOf("/users") !== -1) {
+  if (req.method === "POST") {
     // 可以设置编码，也可以在下方通过 data.toString() 获取字符串格式
-    req.setEncoding('utf-8');
+    req.setEncoding("utf-8");
 
-    req.on('data', (data) => {
-      const {username, password} = JSON.parse(data);
+    req.on("data", (data) => {
+      const { username, password } = JSON.parse(data);
       console.log(username, password);
     });
 
@@ -3779,7 +3758,7 @@ if (req.url.indexOf('/users') !== -1) {
 
 在 request 对象的 header 中也包含很多有用的信息：
 
-```
+```js
 const server = http.createServer((req, res) => {
   console.log(req.headers);
 
@@ -3849,11 +3828,10 @@ const server = http.createServer((req, res) => {
 - Write 方法：这种方式是直接写出数据，但是并没有关闭流；
 - end 方法：这种方式是写出最后的数据，并且写出后会关闭流；
 
-```
-const http = require('http');
+```js
+const http = require("http");
 
 const server = http.createServer((req, res) => {
-
   // 响应数据的方式有两个:
   res.write("Hello World");
   res.write("Hello Response");
@@ -3861,7 +3839,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000, () => {
-  console.log("服务器启动🚀~")
+  console.log("服务器启动🚀~");
 });
 ```
 
@@ -3878,7 +3856,7 @@ Http 状态码（Http Status Code）是用来表示 Http 响应状态的数字�
 
 设置状态码常见的有两种方式：
 
-```
+```js
 res.statusCode = 400;
 res.writeHead(200);
 ```
@@ -3890,12 +3868,12 @@ res.writeHead(200);
 - `res.setHeader`：一次写入一个头部信息；
 - `res.writeHead`：同时写入 header 和 status；
 
-```
+```js
 res.setHeader("Content-Type", "application/json;charset=utf8");
 
 res.writeHead(200, {
-  "Content-Type": "application/json;charset=utf8"
-})
+  "Content-Type": "application/json;charset=utf8",
+});
 ```
 
 Header 设置 `Content-Type`有什么作用呢？
@@ -3904,8 +3882,8 @@ Header 设置 `Content-Type`有什么作用呢？
 
 比如，我们返回的是一段 HTML，但是没有指定格式：
 
-```
-res.end('<h2>Hello World</h2>')
+```js
+res.end("<h2>Hello World</h2>");
 ```
 
 ![图片](https://beelz.oss-cn-beijing.aliyuncs.com/blog/imgs/f7.png)image-20201030154312050
@@ -3921,15 +3899,15 @@ res.end('<h2>Hello World</h2>')
 
 如果我们希望返回一段 JSON 数据，应该怎么做呢？
 
-```
+```js
 res.writeHead(200, {
-  "Content-Type": "application/json;charset=utf8"
-})
+  "Content-Type": "application/json;charset=utf8",
+});
 
 const data = {
   name: "王红元",
   age: 18,
-  height: 1.88
+  height: 1.88,
 };
 
 res.end(JSON.stringify(data));
@@ -3941,26 +3919,26 @@ res.end(JSON.stringify(data));
 
 如果是一个很大的文件需要上传到服务器端，服务器端进行保存应该如何操作呢？
 
-```
+```js
 const server = http.createServer((req, res) => {
-  if (req.url === '/upload') {
-    if (req.method === 'POST') {
-      const fileWriter = fs.createWriteStream('./foo.png');
+  if (req.url === "/upload") {
+    if (req.method === "POST") {
+      const fileWriter = fs.createWriteStream("./foo.png");
       req.pipe(fileWriter);
 
-      const fileSize = req.headers['content-length'];
+      const fileSize = req.headers["content-length"];
       let curSize = 0;
       console.log(fileSize);
 
       req.on("data", (data) => {
         curSize += data.length;
         console.log(curSize);
-        res.write(`文件上传进度: ${curSize/fileSize * 100}%\n`);
+        res.write(`文件上传进度: ${(curSize / fileSize) * 100}%\n`);
       });
 
-      req.on('end', () => {
+      req.on("end", () => {
         res.end("文件上传完成~");
-      })
+      });
     }
   } else {
     res.end("error message");
@@ -3973,30 +3951,32 @@ const server = http.createServer((req, res) => {
 - 这是因为我们写入的数据，里面包含一些特殊的信息；
 - 这些信息打开的软件并不能很好的解析；
 
-```
+```js
 const server = http.createServer((req, res) => {
-  if (req.url === '/upload') {
-    if (req.method === 'POST') {
+  if (req.url === "/upload") {
+    if (req.method === "POST") {
       // 图片文件必须设置为二进制的
-      req.setEncoding('binary');
+      req.setEncoding("binary");
 
       // 获取content-type中的boundary的值
-      var boundary = req.headers['content-type'].split('; ')[1].replace('boundary=','');
+      var boundary = req.headers["content-type"]
+        .split("; ")[1]
+        .replace("boundary=", "");
 
       // 记录当前数据的信息
-      const fileSize = req.headers['content-length'];
+      const fileSize = req.headers["content-length"];
       let curSize = 0;
-      let body = '';
+      let body = "";
 
       // 监听当前的数据
       req.on("data", (data) => {
         curSize += data.length;
-        res.write(`文件上传进度: ${curSize/fileSize * 100}%\n`);
+        res.write(`文件上传进度: ${(curSize / fileSize) * 100}%\n`);
         body += data;
       });
 
       // 数据结构
-      req.on('end', () => {
+      req.on("end", () => {
         // 切割数据
         const payload = qs.parse(body, "\r\n", ":");
         // 获取最后的类型(image/png)
@@ -4004,16 +3984,19 @@ const server = http.createServer((req, res) => {
         // 获取要截取的长度
         const fileTypePosition = body.indexOf(fileType) + fileType.length;
         let binaryData = body.substring(fileTypePosition);
-        binaryData = binaryData.replace(/^\s\s*/, '');
+        binaryData = binaryData.replace(/^\s\s*/, "");
 
         // binaryData = binaryData.replaceAll('\r\n', '');
-        const finalData = binaryData.substring(0, binaryData.indexOf('--'+boundary+'--'));
+        const finalData = binaryData.substring(
+          0,
+          binaryData.indexOf("--" + boundary + "--")
+        );
 
-        fs.writeFile('./boo.png', finalData, 'binary', (err) => {
+        fs.writeFile("./boo.png", finalData, "binary", (err) => {
           console.log(err);
           res.end("文件上传完成~");
-        })
-      })
+        });
+      });
     }
   } else {
     res.end("error message");
@@ -4032,32 +4015,35 @@ axios 库可以在浏览器中使用，也可以在 Node 中使用：
 
 发送 get 请求：
 
-```
+```js
 http.get("http://localhost:8000", (res) => {
-  res.on('data', data => {
+  res.on("data", (data) => {
     console.log(data.toString());
     console.log(JSON.parse(data.toString()));
-  })
+  });
 });
 ```
 
 发送 post 请求：
 
-```
-const req = http.request({
-  method: 'POST',
-  hostname: "localhost",
-  port: 8000
-}, (res) => {
-  res.on('data', data => {
-    console.log(data.toString());
-    console.log(JSON.parse(data.toString()));
-  })
-})
+```js
+const req = http.request(
+  {
+    method: "POST",
+    hostname: "localhost",
+    port: 8000,
+  },
+  (res) => {
+    res.on("data", (data) => {
+      console.log(data.toString());
+      console.log(JSON.parse(data.toString()));
+    });
+  }
+);
 
-req.on('error', err => {
+req.on("error", (err) => {
   console.log(err);
-})
+});
 
 req.end();
 ```
@@ -4102,21 +4088,21 @@ web 开发中，我们使用最多的协议是 http，但是 http 是一个无�
 
 js 直接设置和获取 cookie：
 
-```
-console.log(document.cookie)
+```js
+console.log(document.cookie);
 ```
 
 这个 cookie 会在会话关闭时被删除掉；
 
-```
-document.cookie = "name=coderwhy"
-document.cookie = "age=18"
+```js
+document.cookie = "name=coderwhy";
+document.cookie = "age=18";
 ```
 
 设置 cookie，同时设置过期时间（默认单位是秒钟）服务器设置 cookie
 
-```
-document.cookie = "name=coderwhy;max-age=10"
+```js
+document.cookie = "name=coderwhy;max-age=10";
 ```
 
 #### 10.1.5.服务端设置 cookie
@@ -4126,29 +4112,29 @@ Koa 中默认支持直接操作 cookie
 - /test 请求中设置 cookiep
 - /demo 请求中获取 cookie
 
-```
-const Koa = require('koa')
-const Router = require('koa-router')
+```js
+const Koa = require("koa");
+const Router = require("koa-router");
 
-const app = new Koa()
+const app = new Koa();
 const userRouter = new Router({
-	prefix: '/user'
-})
+  prefix: "/user",
+});
 
-app.use(userRouter.routes())
-app.use(userRouter.allowedMethods())
+app.use(userRouter.routes());
+app.use(userRouter.allowedMethods());
 
-userRouter.get('/', (ctx) => {
-	ctx.cookie.set('name', 'chh', {
-		maxAge: 5 * 1000
-	})
-	ctx.body = '登录成功'
-})
+userRouter.get("/", (ctx) => {
+  ctx.cookie.set("name", "chh", {
+    maxAge: 5 * 1000,
+  });
+  ctx.body = "登录成功";
+});
 
-userRouter.get('/demo', (ctx) => {
-	const value = ctx.cookie.get('name')
-	ctx.body = `cookie值为：${value}`
-})
+userRouter.get("/demo", (ctx) => {
+  const value = ctx.cookie.get("name");
+  ctx.body = `cookie值为：${value}`;
+});
 ```
 
 > 服务端 maxAge 的单位为毫秒，客户端 max-age 单位为秒
@@ -4161,34 +4147,38 @@ userRouter.get('/demo', (ctx) => {
 
 `npm instal koa-session`
 
-```
-const Koa = require('koa')
-const Router = require('koa-router')
-const koaSession = require('koa-session')
+```js
+const Koa = require("koa");
+const Router = require("koa-router");
+const koaSession = require("koa-session");
 
 const userRouter = new Router({
-	prefix: '/user'
-})
-const session = koaSession({
-	key: 'sessionid', // cookie的key
-	maxAge: 5 *1000, // 过期时间
-	httpOnly: true, // 不允许通过js获取cookie
-	rolling: true, // 每次响应时，刷新session的有效期
-	signed: true // 是否使用signed签名认证，防止数据被篡改
-}, app)
-app.keys = ['aaa'] // session加盐
-app.use(session)
-app.use(userRouter.routes())
-app.use(userRouter.allowedMethods())
-userRouter.get('/', (ctx, next) => {
-	const id = 110, name = chh
-	ctx.session.user = { id, name }
-	ctx.body = '登录成功'
-})
-userRouter.get('/demo', (ctx, next) => {
-	console.log(ctx.session.user)
-	ctx.body = 'demo'
-})
+  prefix: "/user",
+});
+const session = koaSession(
+  {
+    key: "sessionid", // cookie的key
+    maxAge: 5 * 1000, // 过期时间
+    httpOnly: true, // 不允许通过js获取cookie
+    rolling: true, // 每次响应时，刷新session的有效期
+    signed: true, // 是否使用signed签名认证，防止数据被篡改
+  },
+  app
+);
+app.keys = ["aaa"]; // session加盐
+app.use(session);
+app.use(userRouter.routes());
+app.use(userRouter.allowedMethods());
+userRouter.get("/", (ctx, next) => {
+  const id = 110,
+    name = chh;
+  ctx.session.user = { id, name };
+  ctx.body = "登录成功";
+});
+userRouter.get("/demo", (ctx, next) => {
+  console.log(ctx.session.user);
+  ctx.body = "demo";
+});
 ```
 
 ### 10.2.邂逅 token
