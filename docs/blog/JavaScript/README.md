@@ -7137,3 +7137,91 @@ console.log(obj2.s2 === obj.s2); //false
 # 24、URLSearchParams
 
 ![image-20220403194739913](https://ypyun-cdn.u1n1.com/img/picgo202204152343274.png)
+
+
+## 排序算法
+
+### **冒泡排序**
+```js
+function bubble(arr) {
+  let temp = null
+
+  // 外层i控制比较的轮数
+  for(let i=0; i<arr.length-1; i++) {
+    // 里层的循环控制控制每一轮比较的次数 j
+    for(let j=0; j<arr.length - 1 -i; j++) {
+      if (arr[j] >arr[j+1]){
+        // 当前项大于后一项
+        temp = arr[j]
+        arr[j] = arr[j+1]
+        arr[j+1] = temp
+      }
+    }
+  }
+
+  return arr
+}
+
+```
+
+### **插入排序**
+```js
+function insert(arr) {
+  // 1. 准备一个新数组，用来存储抓到手里的牌，开始先抓一张牌进来
+  let handle = []
+  handle.push(arr[0])
+
+  // 2. 从第二项开始抓拍 一直把台面上的牌抓光
+  for(let i=1; i<arr.length; i++) {
+    // A是新抓的牌
+    let A = arr[i]
+
+    // 和 handle 手里的牌依次比较（从后向前）
+    for(let j = handle.length - 1; j >= 0; j--) {
+      // 每次要比较的手里的牌
+      let B = handle[j]
+      // 如果当前新牌A比要比较的牌B大，把A放到B的后面
+      if (A > B) {
+        handle.splice(j+1, 0, A)
+        break
+      }
+
+      // 已经比到第一项，将新牌放到手中牌的最前
+      if (j==0) {
+        handle.unshift(A)
+      }
+    }
+  }
+
+  return handle
+}
+
+```
+
+### **快速排序**
+
+```js
+function quick(arr) {
+  // 4.递归结束 （相当于 arr 中小于第一项 则不用处理）
+  if (arr.length <= 1) {
+    return arr
+  }
+
+  // 1.找到数组的中间项， 在原有的数组中把它移除
+  let middleIndex = Math.floor(arr.length / 2)
+  let middleValue = arr.splice(middleIndex, 1)[0]
+
+  // 2.准备左右两个空数组，循环剩下数组中的每一项， 比当前项小的放到左数组中，比当前大的放到右数组中
+  let arrLeft = [],
+      arrRight = []
+
+  for (let i=0; i<arr.length; i++) {
+    let item = arr[i]
+    item <middleValue ? arrLeft.push(item) : arrRight.push(item)
+  }
+
+  // 3.递归方式让左右两边的数组持续处理 一直到左右两边都好为止，最后让 左边+中间+右边拼接成最后的结果
+
+  return quick(arrLeft).concat(middleValue, quick(arrRight))
+}
+```
