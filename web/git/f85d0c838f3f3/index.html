@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一张脑图带你掌握Git命令 | 八爪鱼小站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="八爪鱼小站">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4025035.css" as="style"><link rel="preload" href="/assets/js/app.984fdec4.js" as="script"><link rel="preload" href="/assets/js/2.f6007b26.js" as="script"><link rel="preload" href="/assets/js/33.b2156d6b.js" as="script"><link rel="prefetch" href="/assets/js/10.59cdb2f4.js"><link rel="prefetch" href="/assets/js/11.4e8427de.js"><link rel="prefetch" href="/assets/js/12.7a10184b.js"><link rel="prefetch" href="/assets/js/13.083a4586.js"><link rel="prefetch" href="/assets/js/14.b100d612.js"><link rel="prefetch" href="/assets/js/15.08fdb981.js"><link rel="prefetch" href="/assets/js/16.808ce394.js"><link rel="prefetch" href="/assets/js/17.c6489116.js"><link rel="prefetch" href="/assets/js/18.8f683b57.js"><link rel="prefetch" href="/assets/js/19.e3c29ff0.js"><link rel="prefetch" href="/assets/js/20.73eecd32.js"><link rel="prefetch" href="/assets/js/21.701951a2.js"><link rel="prefetch" href="/assets/js/22.2013c06b.js"><link rel="prefetch" href="/assets/js/23.957e09cd.js"><link rel="prefetch" href="/assets/js/24.7c713358.js"><link rel="prefetch" href="/assets/js/25.0e6a82f8.js"><link rel="prefetch" href="/assets/js/26.a05ee402.js"><link rel="prefetch" href="/assets/js/27.cf387aa5.js"><link rel="prefetch" href="/assets/js/28.10b336a1.js"><link rel="prefetch" href="/assets/js/29.f95ddc62.js"><link rel="prefetch" href="/assets/js/3.57a28cbb.js"><link rel="prefetch" href="/assets/js/30.0c819ce6.js"><link rel="prefetch" href="/assets/js/31.edb82535.js"><link rel="prefetch" href="/assets/js/32.0da353ea.js"><link rel="prefetch" href="/assets/js/34.3b32512e.js"><link rel="prefetch" href="/assets/js/35.c588f8e0.js"><link rel="prefetch" href="/assets/js/36.b306573c.js"><link rel="prefetch" href="/assets/js/37.d0c3967d.js"><link rel="prefetch" href="/assets/js/38.81b57a9f.js"><link rel="prefetch" href="/assets/js/39.e1a6ecaf.js"><link rel="prefetch" href="/assets/js/4.0495b111.js"><link rel="prefetch" href="/assets/js/40.3d350cf1.js"><link rel="prefetch" href="/assets/js/41.11e9c39c.js"><link rel="prefetch" href="/assets/js/42.01710931.js"><link rel="prefetch" href="/assets/js/43.8474ba10.js"><link rel="prefetch" href="/assets/js/44.ede483ee.js"><link rel="prefetch" href="/assets/js/45.fe2a4bf2.js"><link rel="prefetch" href="/assets/js/46.688bd2c0.js"><link rel="prefetch" href="/assets/js/47.c405d292.js"><link rel="prefetch" href="/assets/js/48.7f5d7cad.js"><link rel="prefetch" href="/assets/js/49.22b61fb9.js"><link rel="prefetch" href="/assets/js/5.b3f55925.js"><link rel="prefetch" href="/assets/js/50.315d590f.js"><link rel="prefetch" href="/assets/js/51.304a8e2f.js"><link rel="prefetch" href="/assets/js/52.dc01aad1.js"><link rel="prefetch" href="/assets/js/53.ed974a2f.js"><link rel="prefetch" href="/assets/js/54.3f8ea4f6.js"><link rel="prefetch" href="/assets/js/55.63aef931.js"><link rel="prefetch" href="/assets/js/56.714a0542.js"><link rel="prefetch" href="/assets/js/57.071c0df4.js"><link rel="prefetch" href="/assets/js/58.725c2ccb.js"><link rel="prefetch" href="/assets/js/59.b7faeb7b.js"><link rel="prefetch" href="/assets/js/6.5385b4bb.js"><link rel="prefetch" href="/assets/js/60.8f4b2b12.js"><link rel="prefetch" href="/assets/js/61.eeb76448.js"><link rel="prefetch" href="/assets/js/7.5d579fc3.js"><link rel="prefetch" href="/assets/js/8.44873d68.js"><link rel="prefetch" href="/assets/js/9.937d4458.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4025035.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">八爪鱼小站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>一张脑图带你掌握Git命令</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/git/f85d0c838f3f3/#说明" class="sidebar-link">说明</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/git/f85d0c838f3f3/#git-命令脑图" class="sidebar-link">git 命令脑图</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/git/f85d0c838f3f3/#基本概念" class="sidebar-link">基本概念</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#版本库-git" class="sidebar-link">版本库 .git</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#工作区" class="sidebar-link">工作区</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#暂存区-index-stage" class="sidebar-link">暂存区 (Index/Stage)</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#本地仓库-repository" class="sidebar-link">本地仓库（Repository）</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#远程仓库-remote" class="sidebar-link">远程仓库（Remote）</a></li></ul></li><li><a href="/web/git/f85d0c838f3f3/#git文件状态" class="sidebar-link">Git文件状态</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/git/f85d0c838f3f3/#常见命令" class="sidebar-link">常见命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#git-配置命令" class="sidebar-link">git 配置命令</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#分支管理" class="sidebar-link">分支管理</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#fetch-指令" class="sidebar-link">fetch 指令</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#花式撤销" class="sidebar-link">花式撤销</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#状态查询" class="sidebar-link">状态查询</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#文件暂存" class="sidebar-link">文件暂存</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#差异比较" class="sidebar-link">差异比较</a></li></ul></li><li><a href="/web/git/f85d0c838f3f3/#分支命名" class="sidebar-link">分支命名</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#master-分支" class="sidebar-link">master 分支</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#develop-分支" class="sidebar-link">develop 分支</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#feature-分支" class="sidebar-link">feature 分支</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#release-分支" class="sidebar-link">release 分支</a></li><li class="sidebar-sub-header"><a href="/web/git/f85d0c838f3f3/#hotfix-分支" class="sidebar-link">hotfix 分支</a></li></ul></li><li><a href="/web/git/f85d0c838f3f3/#基本操作" class="sidebar-link">基本操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/git/f85d0c838f3f3/#忽略文件-gitignore" class="sidebar-link">忽略文件 .gitignore</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="说明"><a href="#说明" class="header-anchor">#</a> 说明</h2> <p>参考文章：</p> <p><a href="https://juejin.im/post/6869519303864123399#heading-9" target="_blank" rel="noopener noreferrer">【「一劳永逸」一张脑图带你掌握Git命令】--TianTianUp<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://juejin.im/post/6844903635533594632" target="_blank" rel="noopener noreferrer">【您必须知道的 Git 分支开发规范】 - 稻草叔叔<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="git-命令脑图"><a href="#git-命令脑图" class="header-anchor">#</a> git 命令脑图</h2> <p><a href="https://blog.csdn.net/kaimo313/article/details/108584389" target="_blank" rel="noopener noreferrer">git 命令脑图链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <p><img src="https://img-blog.csdnimg.cn/20200917184011887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <p>基于上面的图，我们就有接下来一些概念</p> <h3 id="版本库-git"><a href="#版本库-git" class="header-anchor">#</a> 版本库 <code>.git</code></h3> <ul><li>当我们使用git管理文件时，比如 <code>git init</code> 时，这个时候，会多一个 <code>.git</code> 文件，我们把这个文件称之为版本库。</li> <li><code>.git</code> 文件另外一个作用就是它在创建的时候，会自动创建 master 分支，并且将 HEAD 指针指向 master 分支。</li></ul> <h3 id="工作区"><a href="#工作区" class="header-anchor">#</a> 工作区</h3> <ul><li>本地项目存放文件的位置</li> <li>可以理解成图上的 workspace</li></ul> <h3 id="暂存区-index-stage"><a href="#暂存区-index-stage" class="header-anchor">#</a> 暂存区 (Index/Stage)</h3> <ul><li>顾名思义就是暂时存放文件的地方，通过是通过 add 命令将工作区的文件添加到缓冲区</li></ul> <h3 id="本地仓库-repository"><a href="#本地仓库-repository" class="header-anchor">#</a> 本地仓库（Repository）</h3> <ul><li>通常情况下，我们使用 commit 命令可以将暂存区的文件添加到本地仓库</li> <li>通常而言，HEAD 指针指向的就是 master 分支</li></ul> <h3 id="远程仓库-remote"><a href="#远程仓库-remote" class="header-anchor">#</a> 远程仓库（Remote）</h3> <ul><li>举个例子，当我们使用 GitHub 托管我们项目时，它就是一个远程仓库。</li> <li>通常我们使用 clone 命令将远程仓库代码拷贝下来，本地代码更新后，通过 push 托送给远程仓库。</li></ul> <h2 id="git文件状态"><a href="#git文件状态" class="header-anchor">#</a> Git文件状态</h2> <p>通常我们需要查看一个文件的状态</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> status
+</code></pre></div><p><code>Changes not staged for commit</code></p> <blockquote><p>表示得大概就是工作区有该内容，但是缓存区没有，需要我们 git add</p></blockquote> <p><code>Changes to be committed</code></p> <blockquote><p>一般而言，这个时候，文件放在缓存区了，我们需要git commit</p></blockquote> <p><code>nothing to commit, working tree clean</code></p> <blockquote><p>这个时候，我们将本地的代码推送到远端即可</p></blockquote> <h2 id="常见命令"><a href="#常见命令" class="header-anchor">#</a> 常见命令</h2> <h3 id="git-配置命令"><a href="#git-配置命令" class="header-anchor">#</a> git 配置命令</h3> <p><img src="https://img-blog.csdnimg.cn/20200917184033946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <p>列出当前配置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --list   
+</code></pre></div><p>列出 Repository 配置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --local --list
+</code></pre></div><p>列出系统配置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --system --list
+</code></pre></div><p>通过上述的命令，发现你并没有配置用户信息的话，接下来配置一下</p> <p>配置用户名</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --global user.name <span class="token string">&quot;your name&quot;</span>
+</code></pre></div><p>配置用户邮箱</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --global user.email <span class="token string">&quot;youremail@github.com&quot;</span>
+</code></pre></div><h3 id="分支管理"><a href="#分支管理" class="header-anchor">#</a> 分支管理</h3> <p><img src="https://img-blog.csdnimg.cn/20200917184048506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <p>查看本地分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch
+</code></pre></div><p>查看远程分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch -r
+</code></pre></div><p>查看本地和远程分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch -a
+</code></pre></div><p>从当前分支，切换到其他分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>
+// 举个例子
+<span class="token function">git</span> checkout feature/tiantian
+</code></pre></div><p>创建并切换到新建分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>
+// 举个例子
+<span class="token function">git</span> checkout -b feature/tiantian
+</code></pre></div><p>删除分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch -d <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>
+// 举个例子
+<span class="token function">git</span> branch -d feature/tiantian
+</code></pre></div><p>当前分支与指定分支合并</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> merge <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>
+// 举个例子
+<span class="token function">git</span> merge feature/tiantian
+</code></pre></div><p>查看哪些分支已经合并到当前分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch --merged
+</code></pre></div><p>查看哪些分支没有合并到当前分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch --no-merged
+</code></pre></div><p>查看各个分支最后一个提交对象的信息</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch -v
+</code></pre></div><p>删除远程分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> push origin -d <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>
+</code></pre></div><p>重命名分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch -m <span class="token operator">&lt;</span>oldbranch-name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>newbranch-name<span class="token operator">&gt;</span>
+</code></pre></div><p>拉取远程分支并创建本地分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout -b 本地分支名x origin/远程分支名x
+
+// 另外一种方式,也可以完成这个操作。
+<span class="token function">git</span> fetch origin <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>local-branch-name<span class="token operator">&gt;</span>
+// fetch这个指令的话,后续会梳理
+</code></pre></div><h3 id="fetch-指令"><a href="#fetch-指令" class="header-anchor">#</a> fetch 指令</h3> <p><img src="https://img-blog.csdnimg.cn/20200917184107262.png#pic_center" alt="在这里插入图片描述"></p> <p><strong>fetch推荐写法</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> fetch origin <span class="token operator">&lt;</span>branch-name<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>local-branch-name<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>一般而言，这个 origin 是远程主机名，一般默认就是 origin。</li> <li><code>branch-name</code> 你要拉取的分支</li> <li><code>local-branch-name</code> 通常而言，就是你本地新建一个新分支，将 origin 下的某个分支代码下载到本地分支。</li></ul> <p>举个例子</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> fetch origin feature/template_excellent:feature/template_layout
+// 你的工作目录下，就会有feature/template_layout
+// 一般情况下,我们需要做的就是在这个分支上开发新需求
+// 完成代码后,我们需要做的就是上传我们的分支
+</code></pre></div><p><strong>fetch其他写法</strong></p> <p>将某个远程主机的更新，全部取回本地。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> fetch <span class="token operator">&lt;</span>远程主机名<span class="token operator">&gt;</span> 
+</code></pre></div><p>这样子的话，取回的是所有的分支更新，如果想取回特定分支，可以指定分支名</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> fetch <span class="token operator">&lt;</span>远程主机名<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>分支名<span class="token operator">&gt;</span>
+</code></pre></div><p>当你想将某个分支的内容取回到本地下某个分支的话，如下</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> fetch origin :<span class="token operator">&lt;</span>local-branch-name<span class="token operator">&gt;</span>
+// 等价于
+<span class="token function">git</span> fetch origin master:<span class="token operator">&lt;</span>local-branch-name<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="花式撤销"><a href="#花式撤销" class="header-anchor">#</a> 花式撤销</h3> <p><img src="https://img-blog.csdnimg.cn/2020091718412239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <p>撤销工作区修改</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout --
+</code></pre></div><p>暂存区文件撤销 (不覆盖工作区)</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> reset HEAD
+</code></pre></div><p>版本回退</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> reset --<span class="token punctuation">(</span>soft <span class="token operator">|</span> mixed <span class="token operator">|</span> hard <span class="token punctuation">)</span> <span class="token operator">&lt;</span> HEAD ~<span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">|</span>
+</code></pre></div><table><thead><tr><th>指令</th> <th>作用范围</th></tr></thead> <tbody><tr><td>--hard</td> <td>回退全部，包括HEAD，index，working tree</td></tr> <tr><td>--mixed</td> <td>回退部分,包括HEAD，index</td></tr> <tr><td>--soft</td> <td>只回退HEAD</td></tr></tbody></table> <h3 id="状态查询"><a href="#状态查询" class="header-anchor">#</a> 状态查询</h3> <p>展示Git命令大纲</p> <ul><li><code>git help (--help)</code></li></ul> <p>展示Git命令大纲全部列表</p> <ul><li><code>git help -a</code></li></ul> <p>展示具体命令说明手册</p> <ul><li><code>git help</code></li></ul> <h3 id="文件暂存"><a href="#文件暂存" class="header-anchor">#</a> 文件暂存</h3> <p><img src="https://img-blog.csdnimg.cn/2020091718414032.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <p>添加改动到 stash</p> <ul><li><code>git stash save -a “message”</code></li></ul> <p>删除暂存</p> <ul><li><code>git stash drop stash@{ID}</code></li></ul> <p>删除全部缓存</p> <ul><li><code>git stash clear</code></li></ul> <p>恢复改动</p> <ul><li><code>git stash pop stash@{ID}</code></li></ul> <h3 id="差异比较"><a href="#差异比较" class="header-anchor">#</a> 差异比较</h3> <p><img src="https://img-blog.csdnimg.cn/20200917184156160.png#pic_center" alt="在这里插入图片描述"></p> <p>比较工作区与缓存区</p> <ul><li><code>git diff</code></li></ul> <p>比较缓存区与本地库最近一次commit内容</p> <ul><li><code>git diff -- cached</code></li></ul> <p>比较工作区与本地最近一次commit内容</p> <ul><li><code>git diff HEAD</code></li></ul> <p>比较两个commit之间差异</p> <ul><li><code>git diff &lt;commit ID&gt; &lt;commit ID&gt;</code></li></ul> <h2 id="分支命名"><a href="#分支命名" class="header-anchor">#</a> 分支命名</h2> <p><img src="https://img-blog.csdnimg.cn/20200917184215675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thaW1vMzEz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p> <h3 id="master-分支"><a href="#master-分支" class="header-anchor">#</a> master 分支</h3> <p>1、主分支，用于部署生产环境的分支，确保稳定性。</p> <p>2、master 分支一般由 develop 以及 hotfix 分支合并，任何情况下都不能直接修改代码。</p> <h3 id="develop-分支"><a href="#develop-分支" class="header-anchor">#</a> develop 分支</h3> <p>1、develop 为开发分支，通常情况下，保存最新完成以及 bug 修复后的代码。</p> <p>2、开发新功能时，feature 分支都是基于 develop 分支下创建的。</p> <h3 id="feature-分支"><a href="#feature-分支" class="header-anchor">#</a> feature 分支</h3> <p>1、开发新功能，基本上以 develop 为基础创建 feature 分支。</p> <p>2、分支命名：<code>feature/</code> 开头的为特性分支， 命名规则: <code>feature/user_module</code>、 <code>feature/cart_module</code>。</p> <h3 id="release-分支"><a href="#release-分支" class="header-anchor">#</a> release 分支</h3> <p>1、release 为预上线分支，发布提测阶段，会 release 分支代码为基准提测。</p> <h3 id="hotfix-分支"><a href="#hotfix-分支" class="header-anchor">#</a> hotfix 分支</h3> <p>1、分支命名：<code>hotfix/</code> 开头的为修复分支，它的命名规则与 feature 分支类似。</p> <p>2、线上出现紧急问题时，需要及时修复，以 master 分支为基线，创建 hotfix 分支，修复完成后，需要合并到 master 分支和 develop 分支。</p> <h2 id="基本操作"><a href="#基本操作" class="header-anchor">#</a> 基本操作</h2> <p>有了上述的基本了解后，那么我们就来看看整体的一个流程吧。</p> <ul><li>创建本地仓库 git init</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> init
+</code></pre></div><ul><li>链接本地仓库与远端仓库</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote <span class="token function">add</span> origin
+
+origin 默认是远端仓库别名 url 可以是可以使用 https 或者 <span class="token function">ssh</span> 的方式新建
+</code></pre></div><ul><li>检查配置信息</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --list
+</code></pre></div><ul><li>Git user name 与email</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --global user.name <span class="token string">&quot;yourname&quot;</span>
+
+<span class="token function">git</span> config --global user.email <span class="token string">&quot;your_email&quot;</span>
+</code></pre></div><ul><li>生成SSH密钥</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>ssh-keygen -t rsa -C <span class="token string">&quot;这里换上你的邮箱&quot;</span>
+
+<span class="token builtin class-name">cd</span> ~/.ssh 里面有一个文件名为 id_rsa.pub,把里面的内容复制到 <span class="token function">git</span> 库的我的 SSHKEYs 中
+</code></pre></div><ul><li>常看远端仓库信息</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote -v
+</code></pre></div><ul><li>远端仓库重新命名</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote <span class="token function">rename</span> old new
+</code></pre></div><ul><li>提交到缓存区</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span> 全部上传到缓存区
+
+<span class="token function">git</span> <span class="token function">add</span> 指定文件
+</code></pre></div><ul><li>提交到本地仓库</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> commit -m <span class="token string">'some message'</span>
+</code></pre></div><ul><li>提交远程仓库</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> push <span class="token operator">&lt;</span>远程主机名<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>本地分支名<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>远程分支名<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>查看分支</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch
+</code></pre></div><ul><li>创建新分支</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> branch
+</code></pre></div><ul><li>切换分支</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout
+</code></pre></div><h2 id="忽略文件-gitignore"><a href="#忽略文件-gitignore" class="header-anchor">#</a> 忽略文件 .gitignore</h2> <p>这个文件的作用，会去忽略一些不需要纳入 Git 管理这种，我们也不希望出现在未跟踪文件列表。</p> <p>那么我们来看看如何配置该文件信息。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 此行为注释 会被Git忽略</span>
+
+<span class="token comment"># 忽略 node_modules/ 目录下所有的文件</span>
+node_modules
+
+
+<span class="token comment"># 忽略所有.vscode结尾的文件</span>
+.vscode
+
+<span class="token comment"># 忽略所有.md结尾的文件</span>
+*.md
+
+<span class="token comment"># 但README.md 除外</span>
+<span class="token operator">!</span>README.md
+
+<span class="token comment"># 会忽略 doc/something.txt 但不会忽略doc/images/arch.txt</span>
+doc/*.txt
+
+<span class="token comment"># 忽略 doc/ 目录下所有扩展名为txt文件</span>
+
+doc/**/*.txt
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.984fdec4.js" defer></script><script src="/assets/js/2.f6007b26.js" defer></script><script src="/assets/js/33.b2156d6b.js" defer></script>
+  </body>
+</html>

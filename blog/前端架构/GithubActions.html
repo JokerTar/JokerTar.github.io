@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>了解 Github Actions | 八爪鱼小站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="八爪鱼小站">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4025035.css" as="style"><link rel="preload" href="/assets/js/app.984fdec4.js" as="script"><link rel="preload" href="/assets/js/2.f6007b26.js" as="script"><link rel="preload" href="/assets/js/60.8f4b2b12.js" as="script"><link rel="prefetch" href="/assets/js/10.59cdb2f4.js"><link rel="prefetch" href="/assets/js/11.4e8427de.js"><link rel="prefetch" href="/assets/js/12.7a10184b.js"><link rel="prefetch" href="/assets/js/13.083a4586.js"><link rel="prefetch" href="/assets/js/14.b100d612.js"><link rel="prefetch" href="/assets/js/15.08fdb981.js"><link rel="prefetch" href="/assets/js/16.808ce394.js"><link rel="prefetch" href="/assets/js/17.c6489116.js"><link rel="prefetch" href="/assets/js/18.8f683b57.js"><link rel="prefetch" href="/assets/js/19.e3c29ff0.js"><link rel="prefetch" href="/assets/js/20.73eecd32.js"><link rel="prefetch" href="/assets/js/21.701951a2.js"><link rel="prefetch" href="/assets/js/22.2013c06b.js"><link rel="prefetch" href="/assets/js/23.957e09cd.js"><link rel="prefetch" href="/assets/js/24.7c713358.js"><link rel="prefetch" href="/assets/js/25.0e6a82f8.js"><link rel="prefetch" href="/assets/js/26.a05ee402.js"><link rel="prefetch" href="/assets/js/27.cf387aa5.js"><link rel="prefetch" href="/assets/js/28.10b336a1.js"><link rel="prefetch" href="/assets/js/29.f95ddc62.js"><link rel="prefetch" href="/assets/js/3.57a28cbb.js"><link rel="prefetch" href="/assets/js/30.0c819ce6.js"><link rel="prefetch" href="/assets/js/31.edb82535.js"><link rel="prefetch" href="/assets/js/32.0da353ea.js"><link rel="prefetch" href="/assets/js/33.b2156d6b.js"><link rel="prefetch" href="/assets/js/34.3b32512e.js"><link rel="prefetch" href="/assets/js/35.c588f8e0.js"><link rel="prefetch" href="/assets/js/36.b306573c.js"><link rel="prefetch" href="/assets/js/37.d0c3967d.js"><link rel="prefetch" href="/assets/js/38.81b57a9f.js"><link rel="prefetch" href="/assets/js/39.e1a6ecaf.js"><link rel="prefetch" href="/assets/js/4.0495b111.js"><link rel="prefetch" href="/assets/js/40.3d350cf1.js"><link rel="prefetch" href="/assets/js/41.11e9c39c.js"><link rel="prefetch" href="/assets/js/42.01710931.js"><link rel="prefetch" href="/assets/js/43.8474ba10.js"><link rel="prefetch" href="/assets/js/44.ede483ee.js"><link rel="prefetch" href="/assets/js/45.fe2a4bf2.js"><link rel="prefetch" href="/assets/js/46.688bd2c0.js"><link rel="prefetch" href="/assets/js/47.c405d292.js"><link rel="prefetch" href="/assets/js/48.7f5d7cad.js"><link rel="prefetch" href="/assets/js/49.22b61fb9.js"><link rel="prefetch" href="/assets/js/5.b3f55925.js"><link rel="prefetch" href="/assets/js/50.315d590f.js"><link rel="prefetch" href="/assets/js/51.304a8e2f.js"><link rel="prefetch" href="/assets/js/52.dc01aad1.js"><link rel="prefetch" href="/assets/js/53.ed974a2f.js"><link rel="prefetch" href="/assets/js/54.3f8ea4f6.js"><link rel="prefetch" href="/assets/js/55.63aef931.js"><link rel="prefetch" href="/assets/js/56.714a0542.js"><link rel="prefetch" href="/assets/js/57.071c0df4.js"><link rel="prefetch" href="/assets/js/58.725c2ccb.js"><link rel="prefetch" href="/assets/js/59.b7faeb7b.js"><link rel="prefetch" href="/assets/js/6.5385b4bb.js"><link rel="prefetch" href="/assets/js/61.eeb76448.js"><link rel="prefetch" href="/assets/js/7.5d579fc3.js"><link rel="prefetch" href="/assets/js/8.44873d68.js"><link rel="prefetch" href="/assets/js/9.937d4458.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4025035.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">八爪鱼小站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>了解 Github Actions</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/GithubActions.html#概览" class="sidebar-link">概览</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/GithubActions.html#基本概念" class="sidebar-link">基本概念</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/GithubActions.html#基本配置字段" class="sidebar-link">基本配置字段</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/GithubActions.html#一个案例了解-github-actions" class="sidebar-link">一个案例了解 Github Actions</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/GithubActions.html#相关文档" class="sidebar-link">相关文档</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="了解-github-actions"><a href="#了解-github-actions" class="header-anchor">#</a> 了解 Github Actions</h1> <h2 id="概览"><a href="#概览" class="header-anchor">#</a> 概览</h2> <blockquote><p>大家知道，持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等。GitHub 把这些操作就称为 actions。</p></blockquote> <blockquote><p>很多操作在不同项目里面是类似的，完全可以共享。GitHub 注意到了这一点，想出了一个很妙的点子，允许开发者把每个操作写成独立的脚本文件，存放到代码仓库，使得其他开发者可以引用。</p></blockquote> <blockquote><p>如果你需要某个 action，不必自己写复杂的脚本，直接引用他人写好的 action 即可，整个持续集成过程，就变成了一个 actions 的组合。这就是 GitHub Actions 最特别的地方。</p></blockquote> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <ol><li><p>workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。</p></li> <li><p>job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。</p></li> <li><p>step（步骤）：每个 job 由多个 step 构成，一步步完成。</p></li> <li><p>action （动作）：每个 step 可以依次执行一个或多个命令（action）。</p></li></ol> <h2 id="基本配置字段"><a href="#基本配置字段" class="header-anchor">#</a> 基本配置字段</h2> <p>详见<a href="https://docs.github.com/cn/actions/learn-github-actions/understanding-github-actions" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="一个案例了解-github-actions"><a href="#一个案例了解-github-actions" class="header-anchor">#</a> 一个案例了解 Github Actions</h2> <p>一个 push 动作，自动拉取代码、配置环境、远程登录到云服务器、自动构建代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">name</span><span class="token operator">:</span> deploy
+
+<span class="token literal-property property">on</span><span class="token operator">:</span>
+  <span class="token literal-property property">push</span><span class="token operator">:</span>
+    <span class="token literal-property property">branches</span><span class="token operator">:</span> <span class="token punctuation">[</span>master<span class="token punctuation">]</span>
+    <span class="token literal-property property">paths</span><span class="token operator">:</span>
+      <span class="token operator">-</span> <span class="token string">&quot;docs/**&quot;</span>
+      <span class="token operator">-</span> <span class="token string">&quot;.github/workflows/**&quot;</span>
+  <span class="token literal-property property">pull_request</span><span class="token operator">:</span>
+    <span class="token literal-property property">branches</span><span class="token operator">:</span> <span class="token punctuation">[</span>master<span class="token punctuation">]</span>
+
+<span class="token literal-property property">jobs</span><span class="token operator">:</span>
+  deploy<span class="token operator">-</span>dev<span class="token operator">:</span>
+    runs<span class="token operator">-</span>on<span class="token operator">:</span> ubuntu<span class="token operator">-</span>latest
+
+    <span class="token literal-property property">steps</span><span class="token operator">:</span>
+      <span class="token operator">-</span> uses<span class="token operator">:</span> actions<span class="token operator">/</span>checkout@v2
+      <span class="token operator">-</span> name<span class="token operator">:</span> install node<span class="token punctuation">.</span>js
+        <span class="token literal-property property">uses</span><span class="token operator">:</span> actions<span class="token operator">/</span>setup<span class="token operator">-</span>node@v2<span class="token punctuation">.</span><span class="token number">5.1</span>
+        <span class="token keyword">with</span><span class="token operator">:</span>
+          node<span class="token operator">-</span>version<span class="token operator">:</span> <span class="token string">&quot;14.x&quot;</span>
+      <span class="token operator">-</span> name<span class="token operator">:</span> install deps
+        <span class="token literal-property property">run</span><span class="token operator">:</span> npm install
+      <span class="token operator">-</span> name<span class="token operator">:</span> build app
+        <span class="token literal-property property">run</span><span class="token operator">:</span> npm run build
+      <span class="token operator">-</span> name<span class="token operator">:</span> copy dist file <span class="token keyword">with</span> scp
+        <span class="token literal-property property">uses</span><span class="token operator">:</span> appleboy<span class="token operator">/</span>scp<span class="token operator">-</span>action@master
+        <span class="token keyword">with</span><span class="token operator">:</span>
+          <span class="token literal-property property">host</span><span class="token operator">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets<span class="token punctuation">.</span><span class="token constant">REMOTE_HOST</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token literal-property property">username</span><span class="token operator">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets<span class="token punctuation">.</span><span class="token constant">REMOTE_USER</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token literal-property property">password</span><span class="token operator">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets<span class="token punctuation">.</span><span class="token constant">REMOTE_PASS</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">22</span>
+          <span class="token literal-property property">source</span><span class="token operator">:</span> <span class="token string">&quot;docs/.vuepress/dist&quot;</span>
+          <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">&quot;/opt/blogs/dist&quot;</span>
+
+</code></pre></div><h2 id="相关文档"><a href="#相关文档" class="header-anchor">#</a> 相关文档</h2> <p><a href="https://docs.github.com/cn/actions" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html" target="_blank" rel="noopener noreferrer">阮一峰 GitHub Actions 入门教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener noreferrer">actions 官方市场<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/sdras/awesome-actions" target="_blank" rel="noopener noreferrer">awesome actions<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.984fdec4.js" defer></script><script src="/assets/js/2.f6007b26.js" defer></script><script src="/assets/js/60.8f4b2b12.js" defer></script>
+  </body>
+</html>

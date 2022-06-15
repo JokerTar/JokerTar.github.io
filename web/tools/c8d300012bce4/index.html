@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>the-super-tiny-compiler | 八爪鱼小站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="八爪鱼小站">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4025035.css" as="style"><link rel="preload" href="/assets/js/app.984fdec4.js" as="script"><link rel="preload" href="/assets/js/2.f6007b26.js" as="script"><link rel="preload" href="/assets/js/43.8474ba10.js" as="script"><link rel="prefetch" href="/assets/js/10.59cdb2f4.js"><link rel="prefetch" href="/assets/js/11.4e8427de.js"><link rel="prefetch" href="/assets/js/12.7a10184b.js"><link rel="prefetch" href="/assets/js/13.083a4586.js"><link rel="prefetch" href="/assets/js/14.b100d612.js"><link rel="prefetch" href="/assets/js/15.08fdb981.js"><link rel="prefetch" href="/assets/js/16.808ce394.js"><link rel="prefetch" href="/assets/js/17.c6489116.js"><link rel="prefetch" href="/assets/js/18.8f683b57.js"><link rel="prefetch" href="/assets/js/19.e3c29ff0.js"><link rel="prefetch" href="/assets/js/20.73eecd32.js"><link rel="prefetch" href="/assets/js/21.701951a2.js"><link rel="prefetch" href="/assets/js/22.2013c06b.js"><link rel="prefetch" href="/assets/js/23.957e09cd.js"><link rel="prefetch" href="/assets/js/24.7c713358.js"><link rel="prefetch" href="/assets/js/25.0e6a82f8.js"><link rel="prefetch" href="/assets/js/26.a05ee402.js"><link rel="prefetch" href="/assets/js/27.cf387aa5.js"><link rel="prefetch" href="/assets/js/28.10b336a1.js"><link rel="prefetch" href="/assets/js/29.f95ddc62.js"><link rel="prefetch" href="/assets/js/3.57a28cbb.js"><link rel="prefetch" href="/assets/js/30.0c819ce6.js"><link rel="prefetch" href="/assets/js/31.edb82535.js"><link rel="prefetch" href="/assets/js/32.0da353ea.js"><link rel="prefetch" href="/assets/js/33.b2156d6b.js"><link rel="prefetch" href="/assets/js/34.3b32512e.js"><link rel="prefetch" href="/assets/js/35.c588f8e0.js"><link rel="prefetch" href="/assets/js/36.b306573c.js"><link rel="prefetch" href="/assets/js/37.d0c3967d.js"><link rel="prefetch" href="/assets/js/38.81b57a9f.js"><link rel="prefetch" href="/assets/js/39.e1a6ecaf.js"><link rel="prefetch" href="/assets/js/4.0495b111.js"><link rel="prefetch" href="/assets/js/40.3d350cf1.js"><link rel="prefetch" href="/assets/js/41.11e9c39c.js"><link rel="prefetch" href="/assets/js/42.01710931.js"><link rel="prefetch" href="/assets/js/44.ede483ee.js"><link rel="prefetch" href="/assets/js/45.fe2a4bf2.js"><link rel="prefetch" href="/assets/js/46.688bd2c0.js"><link rel="prefetch" href="/assets/js/47.c405d292.js"><link rel="prefetch" href="/assets/js/48.7f5d7cad.js"><link rel="prefetch" href="/assets/js/49.22b61fb9.js"><link rel="prefetch" href="/assets/js/5.b3f55925.js"><link rel="prefetch" href="/assets/js/50.315d590f.js"><link rel="prefetch" href="/assets/js/51.304a8e2f.js"><link rel="prefetch" href="/assets/js/52.dc01aad1.js"><link rel="prefetch" href="/assets/js/53.ed974a2f.js"><link rel="prefetch" href="/assets/js/54.3f8ea4f6.js"><link rel="prefetch" href="/assets/js/55.63aef931.js"><link rel="prefetch" href="/assets/js/56.714a0542.js"><link rel="prefetch" href="/assets/js/57.071c0df4.js"><link rel="prefetch" href="/assets/js/58.725c2ccb.js"><link rel="prefetch" href="/assets/js/59.b7faeb7b.js"><link rel="prefetch" href="/assets/js/6.5385b4bb.js"><link rel="prefetch" href="/assets/js/60.8f4b2b12.js"><link rel="prefetch" href="/assets/js/61.eeb76448.js"><link rel="prefetch" href="/assets/js/7.5d579fc3.js"><link rel="prefetch" href="/assets/js/8.44873d68.js"><link rel="prefetch" href="/assets/js/9.937d4458.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4025035.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">八爪鱼小站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/JavaScript/" class="nav-link">
+  JavaScript高级语法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Node" class="dropdown-title"><span class="title">Node</span> <span class="arrow down"></span></button> <button type="button" aria-label="Node" class="mobile-dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/node/01_base.html" class="nav-link">
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/02_scaffold.html" class="nav-link">
+  脚手架的实现
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/03_express.html" class="nav-link">
+  express核心用法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/04_koa.html" class="nav-link">
+  koa核心用法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端架构" class="dropdown-title"><span class="title">前端架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端架构" class="mobile-dropdown-title"><span class="title">前端架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/前端架构/GithubActions.html" class="nav-link">
+  Github Actions
+</a></li><li class="dropdown-item"><!----> <a href="/blog/前端架构/Docker.html" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web" class="dropdown-title"><span class="title">web</span> <span class="arrow down"></span></button> <button type="button" aria-label="web" class="mobile-dropdown-title"><span class="title">web</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/regular.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/network.html" class="nav-link">
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/mobile.html" class="nav-link">
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/optimize.html" class="nav-link">
+  前端性能优化
+</a></li><li class="dropdown-item"><h4>
+          浏览器工作原理与实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/web/browser/01.html" class="nav-link">
+  01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/02.html" class="nav-link">
+  02.TCP协议：如何保证页面文件能被完整送达浏览器？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/03.html" class="nav-link">
+  03.HTTP 请求流程：为什么很多站点第二次打开速度会很快？
+</a></li><li class="dropdown-subitem"><a href="/blog/web/browser/04.html" class="nav-link">
+  04.导航流程：从输入URL到页面展示，这中间发生了什么？
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="案例库" class="dropdown-title"><span class="title">案例库</span> <span class="arrow down"></span></button> <button type="button" aria-label="案例库" class="mobile-dropdown-title"><span class="title">案例库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/case/article-collects.html" class="nav-link">
+  文章收集
+</a></li><li class="dropdown-item"><!----> <a href="/blog/case/dry-goods.html" class="nav-link">
+  前端开发干货
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档教程" class="dropdown-title"><span class="title">文档教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档教程" class="mobile-dropdown-title"><span class="title">文档教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.imooc.com/wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  慕课教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  菜鸟教程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/blog/tutorial/03.印记中文.html" class="nav-link">
+  印记中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>the-super-tiny-compiler</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><strong>词法分析</strong>，也叫做扫描scanner。它读取我们的代码，然后把它们按照预定的规则合并成一个个的标识tokens。同时，它会移除空白符，注释，等。最后，整个代码将被分割进一个tokens列表（或者说一维数组）。</p> <p><strong>语法分析</strong>，也解析器。它会将词法分析出来的数组转化成树形的表达形式。同时，验证语法，语法如果有错的话，抛出语法错误。</p> <p><a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="noopener noreferrer">the-super-tiny-compiler<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><code>This is an ultra-simplified example of all the major pieces of a modern compiler written in easy to read JavaScript.Reading through the guided code will help you learn about how most compilers work from end to end.</code></p> <blockquote><p>这是用易于阅读的 <code>JavaScript</code> 编写的现代编译器所有主要部分的极简示例。通读指导性代码将帮助您了解大多数编译器如何从头到尾工作。</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * TTTTTTTTTTTTTTTTTTTTTTTHHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEE
+ * T:::::::::::::::::::::TH:::::::H     H:::::::HE::::::::::::::::::::E
+ * T:::::::::::::::::::::TH:::::::H     H:::::::HE::::::::::::::::::::E
+ * T:::::TT:::::::TT:::::THH::::::H     H::::::HHEE::::::EEEEEEEEE::::E
+ * TTTTTT  T:::::T  TTTTTT  H:::::H     H:::::H    E:::::E       EEEEEE
+ *         T:::::T          H:::::H     H:::::H    E:::::E
+ *         T:::::T          H::::::HHHHH::::::H    E::::::EEEEEEEEEE
+ *         T:::::T          H:::::::::::::::::H    E:::::::::::::::E
+ *         T:::::T          H:::::::::::::::::H    E:::::::::::::::E
+ *         T:::::T          H::::::HHHHH::::::H    E::::::EEEEEEEEEE
+ *         T:::::T          H:::::H     H:::::H    E:::::E
+ *         T:::::T          H:::::H     H:::::H    E:::::E       EEEEEE
+ *       TT:::::::TT      HH::::::H     H::::::HHEE::::::EEEEEEEE:::::E
+ *       T:::::::::T      H:::::::H     H:::::::HE::::::::::::::::::::E
+ *       T:::::::::T      H:::::::H     H:::::::HE::::::::::::::::::::E
+ *       TTTTTTTTTTT      HHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEE
+ *
+ *    SSSSSSSSSSSSSSS UUUUUUUU     UUUUUUUUPPPPPPPPPPPPPPPPP   EEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR
+ *  SS:::::::::::::::SU::::::U     U::::::UP::::::::::::::::P  E::::::::::::::::::::ER::::::::::::::::R
+ * S:::::SSSSSS::::::SU::::::U     U::::::UP::::::PPPPPP:::::P E::::::::::::::::::::ER::::::RRRRRR:::::R
+ * S:::::S     SSSSSSSUU:::::U     U:::::UUPP:::::P     P:::::PEE::::::EEEEEEEEE::::ERR:::::R     R:::::R
+ * S:::::S             U:::::U     U:::::U   P::::P     P:::::P  E:::::E       EEEEEE  R::::R     R:::::R
+ * S:::::S             U:::::U     U:::::U   P::::P     P:::::P  E:::::E               R::::R     R:::::R
+ *  S::::SSSS          U:::::U     U:::::U   P::::PPPPPP:::::P   E::::::EEEEEEEEEE     R::::RRRRRR:::::R
+ *   SS::::::SSSSS     U:::::U     U:::::U   P:::::::::::::PP    E:::::::::::::::E     R:::::::::::::RR
+ *     SSS::::::::SS   U:::::U     U:::::U   P::::PPPPPPPPP      E:::::::::::::::E     R::::RRRRRR:::::R
+ *        SSSSSS::::S  U:::::U     U:::::U   P::::P              E::::::EEEEEEEEEE     R::::R     R:::::R
+ *             S:::::S U:::::U     U:::::U   P::::P              E:::::E               R::::R     R:::::R
+ *             S:::::S U::::::U   U::::::U   P::::P              E:::::E       EEEEEE  R::::R     R:::::R
+ * SSSSSSS     S:::::S U:::::::UUU:::::::U PP::::::PP          EE::::::EEEEEEEE:::::ERR:::::R     R:::::R
+ * S::::::SSSSSS:::::S  UU:::::::::::::UU  P::::::::P          E::::::::::::::::::::ER::::::R     R:::::R
+ * S:::::::::::::::SS     UU:::::::::UU    P::::::::P          E::::::::::::::::::::ER::::::R     R:::::R
+ *  SSSSSSSSSSSSSSS         UUUUUUUUU      PPPPPPPPPP          EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR
+ *
+ * TTTTTTTTTTTTTTTTTTTTTTTIIIIIIIIIINNNNNNNN        NNNNNNNNYYYYYYY       YYYYYYY
+ * T:::::::::::::::::::::TI::::::::IN:::::::N       N::::::NY:::::Y       Y:::::Y
+ * T:::::::::::::::::::::TI::::::::IN::::::::N      N::::::NY:::::Y       Y:::::Y
+ * T:::::TT:::::::TT:::::TII::::::IIN:::::::::N     N::::::NY::::::Y     Y::::::Y
+ * TTTTTT  T:::::T  TTTTTT  I::::I  N::::::::::N    N::::::NYYY:::::Y   Y:::::YYY
+ *         T:::::T          I::::I  N:::::::::::N   N::::::N   Y:::::Y Y:::::Y
+ *         T:::::T          I::::I  N:::::::N::::N  N::::::N    Y:::::Y:::::Y
+ *         T:::::T          I::::I  N::::::N N::::N N::::::N     Y:::::::::Y
+ *         T:::::T          I::::I  N::::::N  N::::N:::::::N      Y:::::::Y
+ *         T:::::T          I::::I  N::::::N   N:::::::::::N       Y:::::Y
+ *         T:::::T          I::::I  N::::::N    N::::::::::N       Y:::::Y
+ *         T:::::T          I::::I  N::::::N     N:::::::::N       Y:::::Y
+ *       TT:::::::TT      II::::::IIN::::::N      N::::::::N       Y:::::Y
+ *       T:::::::::T      I::::::::IN::::::N       N:::::::N    YYYY:::::YYYY
+ *       T:::::::::T      I::::::::IN::::::N        N::::::N    Y:::::::::::Y
+ *       TTTTTTTTTTT      IIIIIIIIIINNNNNNNN         NNNNNNN    YYYYYYYYYYYYY
+ *
+ *         CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMPPPPPPPPPPPPPPPPP   IIIIIIIIIILLLLLLLLLLL             EEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR
+ *      CCC::::::::::::C   OO:::::::::OO   M:::::::M             M:::::::MP::::::::::::::::P  I::::::::IL:::::::::L             E::::::::::::::::::::ER::::::::::::::::R
+ *    CC:::::::::::::::C OO:::::::::::::OO M::::::::M           M::::::::MP::::::PPPPPP:::::P I::::::::IL:::::::::L             E::::::::::::::::::::ER::::::RRRRRR:::::R
+ *   C:::::CCCCCCCC::::CO:::::::OOO:::::::OM:::::::::M         M:::::::::MPP:::::P     P:::::PII::::::IILL:::::::LL             EE::::::EEEEEEEEE::::ERR:::::R     R:::::R
+ *  C:::::C       CCCCCCO::::::O   O::::::OM::::::::::M       M::::::::::M  P::::P     P:::::P  I::::I    L:::::L                 E:::::E       EEEEEE  R::::R     R:::::R
+ * C:::::C              O:::::O     O:::::OM:::::::::::M     M:::::::::::M  P::::P     P:::::P  I::::I    L:::::L                 E:::::E               R::::R     R:::::R
+ * C:::::C              O:::::O     O:::::OM:::::::M::::M   M::::M:::::::M  P::::PPPPPP:::::P   I::::I    L:::::L                 E::::::EEEEEEEEEE     R::::RRRRRR:::::R
+ * C:::::C              O:::::O     O:::::OM::::::M M::::M M::::M M::::::M  P:::::::::::::PP    I::::I    L:::::L                 E:::::::::::::::E     R:::::::::::::RR
+ * C:::::C              O:::::O     O:::::OM::::::M  M::::M::::M  M::::::M  P::::PPPPPPPPP      I::::I    L:::::L                 E:::::::::::::::E     R::::RRRRRR:::::R
+ * C:::::C              O:::::O     O:::::OM::::::M   M:::::::M   M::::::M  P::::P              I::::I    L:::::L                 E::::::EEEEEEEEEE     R::::R     R:::::R
+ * C:::::C              O:::::O     O:::::OM::::::M    M:::::M    M::::::M  P::::P              I::::I    L:::::L                 E:::::E               R::::R     R:::::R
+ *  C:::::C       CCCCCCO::::::O   O::::::OM::::::M     MMMMM     M::::::M  P::::P              I::::I    L:::::L         LLLLLL  E:::::E       EEEEEE  R::::R     R:::::R
+ *   C:::::CCCCCCCC::::CO:::::::OOO:::::::OM::::::M               M::::::MPP::::::PP          II::::::IILL:::::::LLLLLLLLL:::::LEE::::::EEEEEEEE:::::ERR:::::R     R:::::R
+ *    CC:::::::::::::::C OO:::::::::::::OO M::::::M               M::::::MP::::::::P          I::::::::IL::::::::::::::::::::::LE::::::::::::::::::::ER::::::R     R:::::R
+ *      CCC::::::::::::C   OO:::::::::OO   M::::::M               M::::::MP::::::::P          I::::::::IL::::::::::::::::::::::LE::::::::::::::::::::ER::::::R     R:::::R
+ *         CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMPPPPPPPPPP          IIIIIIIIIILLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR
+ *
+ * =======================================================================================================================================================================
+ * =======================================================================================================================================================================
+ * =======================================================================================================================================================================
+ * =======================================================================================================================================================================
+ */</span>
+
+<span class="token comment">/**
+ * Today we're going to write a compiler together. But not just any compiler... A
+ * super duper teeny tiny compiler! A compiler that is so small that if you
+ * remove all the comments this file would only be ~200 lines of actual code.
+ *
+ * We're going to compile some lisp-like function calls into some C-like
+ * function calls.
+ *
+ * If you are not familiar with one or the other. I'll just give you a quick intro.
+ *
+ * If we had two functions `add` and `subtract` they would be written like this:
+ *
+ *                  LISP                      C
+ *
+ *   2 + 2          (add 2 2)                 add(2, 2)
+ *   4 - 2          (subtract 4 2)            subtract(4, 2)
+ *   2 + (4 - 2)    (add 2 (subtract 4 2))    add(2, subtract(4, 2))
+ *
+ * Easy peezy right?
+ *
+ * Well good, because this is exactly what we are going to compile. While this
+ * is neither a complete LISP or C syntax, it will be enough of the syntax to
+ * demonstrate many of the major pieces of a modern compiler.
+ */</span>
+
+<span class="token comment">/**
+ * Most compilers break down into three primary stages: Parsing, Transformation,
+ * and Code Generation
+ *
+ * 1. *Parsing* is taking raw code and turning it into a more abstract
+ *    representation of the code.
+ *
+ * 2. *Transformation* takes this abstract representation and manipulates to do
+ *    whatever the compiler wants it to.
+ *
+ * 3. *Code Generation* takes the transformed representation of the code and
+ *    turns it into new code.
+ */</span>
+
+<span class="token comment">/**
+ * Parsing
+ * -------
+ *
+ * Parsing typically gets broken down into two phases: Lexical Analysis and
+ * Syntactic Analysis.
+ *
+ * 1. *Lexical Analysis* takes the raw code and splits it apart into these things
+ *    called tokens by a thing called a tokenizer (or lexer).
+ *
+ *    Tokens are an array of tiny little objects that describe an isolated piece
+ *    of the syntax. They could be numbers, labels, punctuation, operators,
+ *    whatever.
+ *
+ * 2. *Syntactic Analysis* takes the tokens and reformats them into a
+ *    representation that describes each part of the syntax and their relation
+ *    to one another. This is known as an intermediate representation or
+ *    Abstract Syntax Tree.
+ *
+ *    An Abstract Syntax Tree, or AST for short, is a deeply nested object that
+ *    represents code in a way that is both easy to work with and tells us a lot
+ *    of information.
+ *
+ * For the following syntax:
+ *
+ *   (add 2 (subtract 4 2))
+ *
+ * Tokens might look something like this:
+ *
+ *   [
+ *     { type: 'paren',  value: '('        },
+ *     { type: 'name',   value: 'add'      },
+ *     { type: 'number', value: '2'        },
+ *     { type: 'paren',  value: '('        },
+ *     { type: 'name',   value: 'subtract' },
+ *     { type: 'number', value: '4'        },
+ *     { type: 'number', value: '2'        },
+ *     { type: 'paren',  value: ')'        },
+ *     { type: 'paren',  value: ')'        },
+ *   ]
+ *
+ * And an Abstract Syntax Tree (AST) might look like this:
+ *
+ *   {
+ *     type: 'Program',
+ *     body: [{
+ *       type: 'CallExpression',
+ *       name: 'add',
+ *       params: [{
+ *         type: 'NumberLiteral',
+ *         value: '2',
+ *       }, {
+ *         type: 'CallExpression',
+ *         name: 'subtract',
+ *         params: [{
+ *           type: 'NumberLiteral',
+ *           value: '4',
+ *         }, {
+ *           type: 'NumberLiteral',
+ *           value: '2',
+ *         }]
+ *       }]
+ *     }]
+ *   }
+ */</span>
+
+<span class="token comment">/**
+ * Transformation
+ * --------------
+ *
+ * The next type of stage for a compiler is transformation. Again, this just
+ * takes the AST from the last step and makes changes to it. It can manipulate
+ * the AST in the same language or it can translate it into an entirely new
+ * language.
+ *
+ * Let’s look at how we would transform an AST.
+ *
+ * You might notice that our AST has elements within it that look very similar.
+ * There are these objects with a type property. Each of these are known as an
+ * AST Node. These nodes have defined properties on them that describe one
+ * isolated part of the tree.
+ *
+ * We can have a node for a &quot;NumberLiteral&quot;:
+ *
+ *   {
+ *     type: 'NumberLiteral',
+ *     value: '2',
+ *   }
+ *
+ * Or maybe a node for a &quot;CallExpression&quot;:
+ *
+ *   {
+ *     type: 'CallExpression',
+ *     name: 'subtract',
+ *     params: [...nested nodes go here...],
+ *   }
+ *
+ * When transforming the AST we can manipulate nodes by
+ * adding/removing/replacing properties, we can add new nodes, remove nodes, or
+ * we could leave the existing AST alone and create an entirely new one based
+ * on it.
+ *
+ * Since we’re targeting a new language, we’re going to focus on creating an
+ * entirely new AST that is specific to the target language.
+ *
+ * Traversal
+ * ---------
+ *
+ * In order to navigate through all of these nodes, we need to be able to
+ * traverse through them. This traversal process goes to each node in the AST
+ * depth-first.
+ *
+ *   {
+ *     type: 'Program',
+ *     body: [{
+ *       type: 'CallExpression',
+ *       name: 'add',
+ *       params: [{
+ *         type: 'NumberLiteral',
+ *         value: '2'
+ *       }, {
+ *         type: 'CallExpression',
+ *         name: 'subtract',
+ *         params: [{
+ *           type: 'NumberLiteral',
+ *           value: '4'
+ *         }, {
+ *           type: 'NumberLiteral',
+ *           value: '2'
+ *         }]
+ *       }]
+ *     }]
+ *   }
+ *
+ * So for the above AST we would go:
+ *
+ *   1. Program - Starting at the top level of the AST
+ *   2. CallExpression (add) - Moving to the first element of the Program's body
+ *   3. NumberLiteral (2) - Moving to the first element of CallExpression's params
+ *   4. CallExpression (subtract) - Moving to the second element of CallExpression's params
+ *   5. NumberLiteral (4) - Moving to the first element of CallExpression's params
+ *   6. NumberLiteral (2) - Moving to the second element of CallExpression's params
+ *
+ * If we were manipulating this AST directly, instead of creating a separate AST,
+ * we would likely introduce all sorts of abstractions here. But just visiting
+ * each node in the tree is enough for what we're trying to do.
+ *
+ * The reason I use the word &quot;visiting&quot; is because there is this pattern of how
+ * to represent operations on elements of an object structure.
+ *
+ * Visitors
+ * --------
+ *
+ * The basic idea here is that we are going to create a “visitor” object that
+ * has methods that will accept different node types.
+ *
+ *   var visitor = {
+ *     NumberLiteral() {},
+ *     CallExpression() {},
+ *   };
+ *
+ * When we traverse our AST, we will call the methods on this visitor whenever we
+ * &quot;enter&quot; a node of a matching type.
+ *
+ * In order to make this useful we will also pass the node and a reference to
+ * the parent node.
+ *
+ *   var visitor = {
+ *     NumberLiteral(node, parent) {},
+ *     CallExpression(node, parent) {},
+ *   };
+ *
+ * However, there also exists the possibility of calling things on &quot;exit&quot;. Imagine
+ * our tree structure from before in list form:
+ *
+ *   - Program
+ *     - CallExpression
+ *       - NumberLiteral
+ *       - CallExpression
+ *         - NumberLiteral
+ *         - NumberLiteral
+ *
+ * As we traverse down, we're going to reach branches with dead ends. As we
+ * finish each branch of the tree we &quot;exit&quot; it. So going down the tree we
+ * &quot;enter&quot; each node, and going back up we &quot;exit&quot;.
+ *
+ *   -&gt; Program (enter)
+ *     -&gt; CallExpression (enter)
+ *       -&gt; Number Literal (enter)
+ *       &lt;- Number Literal (exit)
+ *       -&gt; Call Expression (enter)
+ *          -&gt; Number Literal (enter)
+ *          &lt;- Number Literal (exit)
+ *          -&gt; Number Literal (enter)
+ *          &lt;- Number Literal (exit)
+ *       &lt;- CallExpression (exit)
+ *     &lt;- CallExpression (exit)
+ *   &lt;- Program (exit)
+ *
+ * In order to support that, the final form of our visitor will look like this:
+ *
+ *   var visitor = {
+ *     NumberLiteral: {
+ *       enter(node, parent) {},
+ *       exit(node, parent) {},
+ *     }
+ *   };
+ */</span>
+
+<span class="token comment">/**
+ * Code Generation
+ * ---------------
+ *
+ * The final phase of a compiler is code generation. Sometimes compilers will do
+ * things that overlap with transformation, but for the most part code
+ * generation just means take our AST and string-ify code back out.
+ *
+ * Code generators work several different ways, some compilers will reuse the
+ * tokens from earlier, others will have created a separate representation of
+ * the code so that they can print nodes linearly, but from what I can tell most
+ * will use the same AST we just created, which is what we’re going to focus on.
+ *
+ * Effectively our code generator will know how to “print” all of the different
+ * node types of the AST, and it will recursively call itself to print nested
+ * nodes until everything is printed into one long string of code.
+ */</span>
+
+<span class="token comment">/**
+ * And that's it! That's all the different pieces of a compiler.
+ *
+ * Now that isn’t to say every compiler looks exactly like I described here.
+ * Compilers serve many different purposes, and they might need more steps than
+ * I have detailed.
+ *
+ * But now you should have a general high-level idea of what most compilers look
+ * like.
+ *
+ * Now that I’ve explained all of this, you’re all good to go write your own
+ * compilers right?
+ *
+ * Just kidding, that's what I'm here to help with :P
+ *
+ * So let's begin...
+ */</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                   (/^▽^)/
+ *                                THE TOKENIZER!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * We're gonna start off with our first phase of parsing, lexical analysis, with
+ * the tokenizer.
+ *
+ * We're just going to take our string of code and break it down into an array
+ * of tokens.
+ *
+ *   (add 2 (subtract 4 2))   =&gt;   [{ type: 'paren', value: '(' }, ...]
+ */</span>
+
+<span class="token comment">// We start by accepting an input string of code, and we're gonna set up two</span>
+<span class="token comment">// things...</span>
+<span class="token keyword">function</span> <span class="token function">tokenizer</span><span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// A `current` variable for tracking our position in the code like a cursor.</span>
+  <span class="token keyword">let</span> current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// And a `tokens` array for pushing our tokens to.</span>
+  <span class="token keyword">let</span> tokens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// We start by creating a `while` loop where we are setting up our `current`</span>
+  <span class="token comment">// variable to be incremented as much as we want `inside` the loop.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// We do this because we may want to increment `current` many times within a</span>
+  <span class="token comment">// single loop because our tokens can be any length.</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>current <span class="token operator">&lt;</span> input<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// We're also going to store the `current` character in the `input`.</span>
+    <span class="token keyword">let</span> char <span class="token operator">=</span> input<span class="token punctuation">[</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// The first thing we want to check for is an open parenthesis. This will</span>
+    <span class="token comment">// later be used for `CallExpression` but for now we only care about the</span>
+    <span class="token comment">// character.</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// We check to see if we have an open parenthesis:</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>char <span class="token operator">===</span> <span class="token string">'('</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// If we do, we push a new token with the type `paren` and set the value</span>
+      <span class="token comment">// to an open parenthesis.</span>
+      tokens<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'paren'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'('</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Then we increment `current`</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And we `continue` onto the next cycle of the loop.</span>
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Next we're going to check for a closing parenthesis. We do the same exact</span>
+    <span class="token comment">// thing as before: Check for a closing parenthesis, add a new token,</span>
+    <span class="token comment">// increment `current`, and `continue`.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>char <span class="token operator">===</span> <span class="token string">')'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      tokens<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'paren'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">')'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Moving on, we're now going to check for whitespace. This is interesting</span>
+    <span class="token comment">// because we care that whitespace exists to separate characters, but it</span>
+    <span class="token comment">// isn't actually important for us to store as a token. We would only throw</span>
+    <span class="token comment">// it out later.</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// So here we're just going to test for existence and if it does exist we're</span>
+    <span class="token comment">// going to just `continue` on.</span>
+    <span class="token keyword">let</span> <span class="token constant">WHITESPACE</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">WHITESPACE</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// The next type of token is a number. This is different than what we have</span>
+    <span class="token comment">// seen before because a number could be any number of characters and we</span>
+    <span class="token comment">// want to capture the entire sequence of characters as one token.</span>
+    <span class="token comment">//</span>
+    <span class="token comment">//   (add 123 456)</span>
+    <span class="token comment">//        ^^^ ^^^</span>
+    <span class="token comment">//        Only two separate tokens</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// So we start this off when we encounter the first number in a sequence.</span>
+    <span class="token keyword">let</span> <span class="token constant">NUMBERS</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[0-9]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">NUMBERS</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// We're going to create a `value` string that we are going to push</span>
+      <span class="token comment">// characters to.</span>
+      <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Then we're going to loop through each character in the sequence until</span>
+      <span class="token comment">// we encounter a character that is not a number, pushing each character</span>
+      <span class="token comment">// that is a number to our `value` and incrementing `current` as we go.</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token constant">NUMBERS</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value <span class="token operator">+=</span> char<span class="token punctuation">;</span>
+        char <span class="token operator">=</span> input<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// After that we push our `number` token to the `tokens` array.</span>
+      tokens<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'number'</span><span class="token punctuation">,</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And we continue on.</span>
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// We'll also add support for strings in our language which will be any</span>
+    <span class="token comment">// text surrounded by double quotes (&quot;).</span>
+    <span class="token comment">//</span>
+    <span class="token comment">//   (concat &quot;foo&quot; &quot;bar&quot;)</span>
+    <span class="token comment">//            ^^^   ^^^ string tokens</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// We'll start by checking for the opening quote:</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>char <span class="token operator">===</span> <span class="token string">'&quot;'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Keep a `value` variable for building up our string token.</span>
+      <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// We'll skip the opening double quote in our token.</span>
+      char <span class="token operator">=</span> input<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Then we'll iterate through each character until we reach another</span>
+      <span class="token comment">// double quote.</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>char <span class="token operator">!==</span> <span class="token string">'&quot;'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value <span class="token operator">+=</span> char<span class="token punctuation">;</span>
+        char <span class="token operator">=</span> input<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// Skip the closing double quote.</span>
+      char <span class="token operator">=</span> input<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And add our `string` token to the `tokens` array.</span>
+      tokens<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'string'</span><span class="token punctuation">,</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// The last type of token will be a `name` token. This is a sequence of</span>
+    <span class="token comment">// letters instead of numbers, that are the names of functions in our lisp</span>
+    <span class="token comment">// syntax.</span>
+    <span class="token comment">//</span>
+    <span class="token comment">//   (add 2 4)</span>
+    <span class="token comment">//    ^^^</span>
+    <span class="token comment">//    Name token</span>
+    <span class="token comment">//</span>
+    <span class="token keyword">let</span> <span class="token constant">LETTERS</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[a-z]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">LETTERS</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Again we're just going to loop through all the letters pushing them to</span>
+      <span class="token comment">// a value.</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token constant">LETTERS</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value <span class="token operator">+=</span> char<span class="token punctuation">;</span>
+        char <span class="token operator">=</span> input<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// And pushing that value as a token with the type `name` and continuing.</span>
+      tokens<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Finally if we have not matched a character by now, we're going to throw</span>
+    <span class="token comment">// an error and completely exit.</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'I dont know what this character is: '</span> <span class="token operator">+</span> char<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Then at the end of our `tokenizer` we simply return the tokens array.</span>
+  <span class="token keyword">return</span> tokens<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                 ヽ/❀o ل͜ o\ﾉ
+ *                                THE PARSER!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * For our parser we're going to take our array of tokens and turn it into an
+ * AST.
+ *
+ *   [{ type: 'paren', value: '(' }, ...]   =&gt;   { type: 'Program', body: [...] }
+ */</span>
+
+<span class="token comment">// Okay, so we define a `parser` function that accepts our array of `tokens`.</span>
+<span class="token keyword">function</span> <span class="token function">parser</span><span class="token punctuation">(</span><span class="token parameter">tokens</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// Again we keep a `current` variable that we will use as a cursor.</span>
+  <span class="token keyword">let</span> current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// But this time we're going to use recursion instead of a `while` loop. So we</span>
+  <span class="token comment">// define a `walk` function.</span>
+  <span class="token keyword">function</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// Inside the walk function we start by grabbing the `current` token.</span>
+    <span class="token keyword">let</span> token <span class="token operator">=</span> tokens<span class="token punctuation">[</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// We're going to split each type of token off into a different code path,</span>
+    <span class="token comment">// starting off with `number` tokens.</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// We test to see if we have a `number` token.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// If we have one, we'll increment `current`.</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And we'll return a new AST node called `NumberLiteral` and setting its</span>
+      <span class="token comment">// value to the value of our token.</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'NumberLiteral'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">value</span><span class="token operator">:</span> token<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// If we have a string we will do the same as number and create a</span>
+    <span class="token comment">// `StringLiteral` node.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'StringLiteral'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">value</span><span class="token operator">:</span> token<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Next we're going to look for CallExpressions. We start this off when we</span>
+    <span class="token comment">// encounter an open parenthesis.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      token<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'paren'</span> <span class="token operator">&amp;&amp;</span>
+      token<span class="token punctuation">.</span>value <span class="token operator">===</span> <span class="token string">'('</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// We'll increment `current` to skip the parenthesis since we don't care</span>
+      <span class="token comment">// about it in our AST.</span>
+      token <span class="token operator">=</span> tokens<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// We create a base node with the type `CallExpression`, and we're going</span>
+      <span class="token comment">// to set the name as the current token's value since the next token after</span>
+      <span class="token comment">// the open parenthesis is the name of the function.</span>
+      <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'CallExpression'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> token<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+        <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// We increment `current` *again* to skip the name token.</span>
+      token <span class="token operator">=</span> tokens<span class="token punctuation">[</span><span class="token operator">++</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And now we want to loop through each token that will be the `params` of</span>
+      <span class="token comment">// our `CallExpression` until we encounter a closing parenthesis.</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// Now this is where recursion comes in. Instead of trying to parse a</span>
+      <span class="token comment">// potentially infinitely nested set of nodes we're going to rely on</span>
+      <span class="token comment">// recursion to resolve things.</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// To explain this, let's take our Lisp code. You can see that the</span>
+      <span class="token comment">// parameters of the `add` are a number and a nested `CallExpression` that</span>
+      <span class="token comment">// includes its own numbers.</span>
+      <span class="token comment">//</span>
+      <span class="token comment">//   (add 2 (subtract 4 2))</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// You'll also notice that in our tokens array we have multiple closing</span>
+      <span class="token comment">// parenthesis.</span>
+      <span class="token comment">//</span>
+      <span class="token comment">//   [</span>
+      <span class="token comment">//     { type: 'paren',  value: '('        },</span>
+      <span class="token comment">//     { type: 'name',   value: 'add'      },</span>
+      <span class="token comment">//     { type: 'number', value: '2'        },</span>
+      <span class="token comment">//     { type: 'paren',  value: '('        },</span>
+      <span class="token comment">//     { type: 'name',   value: 'subtract' },</span>
+      <span class="token comment">//     { type: 'number', value: '4'        },</span>
+      <span class="token comment">//     { type: 'number', value: '2'        },</span>
+      <span class="token comment">//     { type: 'paren',  value: ')'        }, &lt;&lt;&lt; Closing parenthesis</span>
+      <span class="token comment">//     { type: 'paren',  value: ')'        }, &lt;&lt;&lt; Closing parenthesis</span>
+      <span class="token comment">//   ]</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// We're going to rely on the nested `walk` function to increment our</span>
+      <span class="token comment">// `current` variable past any nested `CallExpression`.</span>
+
+      <span class="token comment">// So we create a `while` loop that will continue until it encounters a</span>
+      <span class="token comment">// token with a `type` of `'paren'` and a `value` of a closing</span>
+      <span class="token comment">// parenthesis.</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>
+        <span class="token punctuation">(</span>token<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'paren'</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+        <span class="token punctuation">(</span>token<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'paren'</span> <span class="token operator">&amp;&amp;</span> token<span class="token punctuation">.</span>value <span class="token operator">!==</span> <span class="token string">')'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// we'll call the `walk` function which will return a `node` and we'll</span>
+        <span class="token comment">// push it into our `node.params`.</span>
+        node<span class="token punctuation">.</span>params<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        token <span class="token operator">=</span> tokens<span class="token punctuation">[</span>current<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// Finally we will increment `current` one last time to skip the closing</span>
+      <span class="token comment">// parenthesis.</span>
+      current<span class="token operator">++</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And return the node.</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Again, if we haven't recognized the token type by now we're going to</span>
+    <span class="token comment">// throw an error.</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span>token<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Now, we're going to create our AST which will have a root which is a</span>
+  <span class="token comment">// `Program` node.</span>
+  <span class="token keyword">let</span> ast <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Program'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// And we're going to kickstart our `walk` function, pushing nodes to our</span>
+  <span class="token comment">// `ast.body` array.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// The reason we are doing this inside a loop is because our program can have</span>
+  <span class="token comment">// `CallExpression` after one another instead of being nested.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">//   (add 2 2)</span>
+  <span class="token comment">//   (subtract 4 2)</span>
+  <span class="token comment">//</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>current <span class="token operator">&lt;</span> tokens<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ast<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// At the end of our parser we'll return the AST.</span>
+  <span class="token keyword">return</span> ast<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                 ⌒(❀&gt;◞౪◟&lt;❀)⌒
+ *                               THE TRAVERSER!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * So now we have our AST, and we want to be able to visit different nodes with
+ * a visitor. We need to be able to call the methods on the visitor whenever we
+ * encounter a node with a matching type.
+ *
+ *   traverse(ast, {
+ *     Program: {
+ *       enter(node, parent) {
+ *         // ...
+ *       },
+ *       exit(node, parent) {
+ *         // ...
+ *       },
+ *     },
+ *
+ *     CallExpression: {
+ *       enter(node, parent) {
+ *         // ...
+ *       },
+ *       exit(node, parent) {
+ *         // ...
+ *       },
+ *     },
+ *
+ *     NumberLiteral: {
+ *       enter(node, parent) {
+ *         // ...
+ *       },
+ *       exit(node, parent) {
+ *         // ...
+ *       },
+ *     },
+ *   });
+ */</span>
+
+<span class="token comment">// So we define a traverser function which accepts an AST and a</span>
+<span class="token comment">// visitor. Inside we're going to define two functions...</span>
+<span class="token keyword">function</span> <span class="token function">traverser</span><span class="token punctuation">(</span><span class="token parameter">ast<span class="token punctuation">,</span> visitor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// A `traverseArray` function that will allow us to iterate over an array and</span>
+  <span class="token comment">// call the next function that we will define: `traverseNode`.</span>
+  <span class="token keyword">function</span> <span class="token function">traverseArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">traverseNode</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// `traverseNode` will accept a `node` and its `parent` node. So that it can</span>
+  <span class="token comment">// pass both to our visitor methods.</span>
+  <span class="token keyword">function</span> <span class="token function">traverseNode</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// We start by testing for the existence of a method on the visitor with a</span>
+    <span class="token comment">// matching `type`.</span>
+    <span class="token keyword">let</span> methods <span class="token operator">=</span> visitor<span class="token punctuation">[</span>node<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// If there is an `enter` method for this node type we'll call it with the</span>
+    <span class="token comment">// `node` and its `parent`.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>methods <span class="token operator">&amp;&amp;</span> methods<span class="token punctuation">.</span>enter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      methods<span class="token punctuation">.</span><span class="token function">enter</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Next we are going to split things up by the current node type.</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// We'll start with our top level `Program`. Since Program nodes have a</span>
+      <span class="token comment">// property named body that has an array of nodes, we will call</span>
+      <span class="token comment">// `traverseArray` to traverse down into them.</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// (Remember that `traverseArray` will in turn call `traverseNode` so  we</span>
+      <span class="token comment">// are causing the tree to be traversed recursively)</span>
+      <span class="token keyword">case</span> <span class="token string">'Program'</span><span class="token operator">:</span>
+        <span class="token function">traverseArray</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>body<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Next we do the same with `CallExpression` and traverse their `params`.</span>
+      <span class="token keyword">case</span> <span class="token string">'CallExpression'</span><span class="token operator">:</span>
+        <span class="token function">traverseArray</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>params<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// In the cases of `NumberLiteral` and `StringLiteral` we don't have any</span>
+      <span class="token comment">// child nodes to visit, so we'll just break.</span>
+      <span class="token keyword">case</span> <span class="token string">'NumberLiteral'</span><span class="token operator">:</span>
+      <span class="token keyword">case</span> <span class="token string">'StringLiteral'</span><span class="token operator">:</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// And again, if we haven't recognized the node type then we'll throw an</span>
+      <span class="token comment">// error.</span>
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// If there is an `exit` method for this node type we'll call it with the</span>
+    <span class="token comment">// `node` and its `parent`.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>methods <span class="token operator">&amp;&amp;</span> methods<span class="token punctuation">.</span>exit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      methods<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Finally we kickstart the traverser by calling `traverseNode` with our ast</span>
+  <span class="token comment">// with no `parent` because the top level of the AST doesn't have a parent.</span>
+  <span class="token function">traverseNode</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                   ⁽(◍˃̵͈̑ᴗ˂̵͈̑)⁽
+ *                              THE TRANSFORMER!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * Next up, the transformer. Our transformer is going to take the AST that we
+ * have built and pass it to our traverser function with a visitor and will
+ * create a new ast.
+ *
+ * ----------------------------------------------------------------------------
+ *   Original AST                     |   Transformed AST
+ * ----------------------------------------------------------------------------
+ *   {                                |   {
+ *     type: 'Program',               |     type: 'Program',
+ *     body: [{                       |     body: [{
+ *       type: 'CallExpression',      |       type: 'ExpressionStatement',
+ *       name: 'add',                 |       expression: {
+ *       params: [{                   |         type: 'CallExpression',
+ *         type: 'NumberLiteral',     |         callee: {
+ *         value: '2'                 |           type: 'Identifier',
+ *       }, {                         |           name: 'add'
+ *         type: 'CallExpression',    |         },
+ *         name: 'subtract',          |         arguments: [{
+ *         params: [{                 |           type: 'NumberLiteral',
+ *           type: 'NumberLiteral',   |           value: '2'
+ *           value: '4'               |         }, {
+ *         }, {                       |           type: 'CallExpression',
+ *           type: 'NumberLiteral',   |           callee: {
+ *           value: '2'               |             type: 'Identifier',
+ *         }]                         |             name: 'subtract'
+ *       }]                           |           },
+ *     }]                             |           arguments: [{
+ *   }                                |             type: 'NumberLiteral',
+ *                                    |             value: '4'
+ * ---------------------------------- |           }, {
+ *                                    |             type: 'NumberLiteral',
+ *                                    |             value: '2'
+ *                                    |           }]
+ *  (sorry the other one is longer.)  |         }
+ *                                    |       }
+ *                                    |     }]
+ *                                    |   }
+ * ----------------------------------------------------------------------------
+ */</span>
+
+<span class="token comment">// So we have our transformer function which will accept the lisp ast.</span>
+<span class="token keyword">function</span> <span class="token function">transformer</span><span class="token punctuation">(</span><span class="token parameter">ast</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// We'll create a `newAst` which like our previous AST will have a program</span>
+  <span class="token comment">// node.</span>
+  <span class="token keyword">let</span> newAst <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Program'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Next I'm going to cheat a little and create a bit of a hack. We're going to</span>
+  <span class="token comment">// use a property named `context` on our parent nodes that we're going to push</span>
+  <span class="token comment">// nodes to their parent's `context`. Normally you would have a better</span>
+  <span class="token comment">// abstraction than this, but for our purposes this keeps things simple.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// Just take note that the context is a reference *from* the old ast *to* the</span>
+  <span class="token comment">// new ast.</span>
+  ast<span class="token punctuation">.</span>_context <span class="token operator">=</span> newAst<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+
+  <span class="token comment">// We'll start by calling the traverser function with our ast and a visitor.</span>
+  <span class="token function">traverser</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// The first visitor method accepts any `NumberLiteral`</span>
+    <span class="token literal-property property">NumberLiteral</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// We'll visit them on enter.</span>
+      <span class="token function">enter</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// We'll create a new node also named `NumberLiteral` that we will push to</span>
+        <span class="token comment">// the parent context.</span>
+        parent<span class="token punctuation">.</span>_context<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'NumberLiteral'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">value</span><span class="token operator">:</span> node<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// Next we have `StringLiteral`</span>
+    <span class="token literal-property property">StringLiteral</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">enter</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        parent<span class="token punctuation">.</span>_context<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'StringLiteral'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">value</span><span class="token operator">:</span> node<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// Next up, `CallExpression`.</span>
+    <span class="token literal-property property">CallExpression</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">enter</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// We start creating a new node `CallExpression` with a nested</span>
+        <span class="token comment">// `Identifier`.</span>
+        <span class="token keyword">let</span> expression <span class="token operator">=</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'CallExpression'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">callee</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span> node<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">arguments</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Next we're going to define a new context on the original</span>
+        <span class="token comment">// `CallExpression` node that will reference the `expression`'s arguments</span>
+        <span class="token comment">// so that we can push arguments.</span>
+        node<span class="token punctuation">.</span>_context <span class="token operator">=</span> expression<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
+
+        <span class="token comment">// Then we're going to check if the parent node is a `CallExpression`.</span>
+        <span class="token comment">// If it is not...</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>parent<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'CallExpression'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+          <span class="token comment">// We're going to wrap our `CallExpression` node with an</span>
+          <span class="token comment">// `ExpressionStatement`. We do this because the top level</span>
+          <span class="token comment">// `CallExpression` in JavaScript are actually statements.</span>
+          expression <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'ExpressionStatement'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">expression</span><span class="token operator">:</span> expression<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Last, we push our (possibly wrapped) `CallExpression` to the `parent`'s</span>
+        <span class="token comment">// `context`.</span>
+        parent<span class="token punctuation">.</span>_context<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>expression<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// At the end of our transformer function we'll return the new ast that we</span>
+  <span class="token comment">// just created.</span>
+  <span class="token keyword">return</span> newAst<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                               ヾ（〃＾∇＾）ﾉ♪
+ *                            THE CODE GENERATOR!!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * Now let's move onto our last phase: The Code Generator.
+ *
+ * Our code generator is going to recursively call itself to print each node in
+ * the tree into one giant string.
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">codeGenerator</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// We'll break things down by the `type` of the `node`.</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// If we have a `Program` node. We will map through each node in the `body`</span>
+    <span class="token comment">// and run them through the code generator and join them with a newline.</span>
+    <span class="token keyword">case</span> <span class="token string">'Program'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>codeGenerator<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// For `ExpressionStatement` we'll call the code generator on the nested</span>
+    <span class="token comment">// expression and we'll add a semicolon...</span>
+    <span class="token keyword">case</span> <span class="token string">'ExpressionStatement'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token function">codeGenerator</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>expression<span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string">';'</span> <span class="token comment">// &lt;&lt; (...because we like to code the *correct* way)</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// For `CallExpression` we will print the `callee`, add an open</span>
+    <span class="token comment">// parenthesis, we'll map through each node in the `arguments` array and run</span>
+    <span class="token comment">// them through the code generator, joining them with a comma, and then</span>
+    <span class="token comment">// we'll add a closing parenthesis.</span>
+    <span class="token keyword">case</span> <span class="token string">'CallExpression'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token function">codeGenerator</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>callee<span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string">'('</span> <span class="token operator">+</span>
+        node<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>codeGenerator<span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string">')'</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// For `Identifier` we'll just return the `node`'s name.</span>
+    <span class="token keyword">case</span> <span class="token string">'Identifier'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+    <span class="token comment">// For `NumberLiteral` we'll just return the `node`'s value.</span>
+    <span class="token keyword">case</span> <span class="token string">'NumberLiteral'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+
+    <span class="token comment">// For `StringLiteral` we'll add quotations around the `node`'s value.</span>
+    <span class="token keyword">case</span> <span class="token string">'StringLiteral'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token string">'&quot;'</span> <span class="token operator">+</span> node<span class="token punctuation">.</span>value <span class="token operator">+</span> <span class="token string">'&quot;'</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// And if we haven't recognized the node, we'll throw an error.</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                  (۶* ‘ヮ’)۶”
+ *                         !!!!!!!!THE COMPILER!!!!!!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">/**
+ * FINALLY! We'll create our `compiler` function. Here we will link together
+ * every part of the pipeline.
+ *
+ *   1. input  =&gt; tokenizer   =&gt; tokens
+ *   2. tokens =&gt; parser      =&gt; ast
+ *   3. ast    =&gt; transformer =&gt; newAst
+ *   4. newAst =&gt; generator   =&gt; output
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">compiler</span><span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> tokens <span class="token operator">=</span> <span class="token function">tokenizer</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> ast    <span class="token operator">=</span> <span class="token function">parser</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> newAst <span class="token operator">=</span> <span class="token function">transformer</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> output <span class="token operator">=</span> <span class="token function">codeGenerator</span><span class="token punctuation">(</span>newAst<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// and simply return the output!</span>
+  <span class="token keyword">return</span> output<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * ============================================================================
+ *                                   (๑˃̵ᴗ˂̵)و
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!YOU MADE IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * ============================================================================
+ */</span>
+
+<span class="token comment">// Now I'm just exporting everything...</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  tokenizer<span class="token punctuation">,</span>
+  parser<span class="token punctuation">,</span>
+  traverser<span class="token punctuation">,</span>
+  transformer<span class="token punctuation">,</span>
+  codeGenerator<span class="token punctuation">,</span>
+  compiler<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.984fdec4.js" defer></script><script src="/assets/js/2.f6007b26.js" defer></script><script src="/assets/js/43.8474ba10.js" defer></script>
+  </body>
+</html>
